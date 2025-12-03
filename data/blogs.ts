@@ -11,18 +11,21 @@ export interface Blog {
 export const blogs: Blog[] = [
     {
         id: "1",
-        title: "Why I Switched to Next.js",
-        content: "Next.js provides a great developer experience with features like file-system routing, API routes, and static site generation. It has significantly improved my workflow and site performance.",
-        codeSnippet: "export async function getStaticProps() {\n  // Fetch data from external API\n  const res = await fetch('https://.../data')\n  const data = await res.json()\n  return { props: { data } }\n}",
-        imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
+        title: "Why My Brain Never Shuts Up",
+        content: "I overthink everything. Not in the dramatic cinematic way, but in the quiet, analytical, INTP sense where my mind runs simulations of conversations, choices, alternate timelines, and completely unnecessary hypotheticals. I don’t do it because I want to—my mind just defaults to analysis mode. Over time, I’ve realized this isn’t a flaw; it’s my system’s baseline. The same looping thoughts that annoy me also help me solve problems faster, understand people deeper, and navigate life with unusual clarity. This is my calm chaos, and I’m finally learning to treat it as a feature, not a bug.",
+        codeSnippet: "// Thought Process v1.0\nwhile(true) {\n  analyze(everything);\n  accidentally_overthink();\n  pretend_its_productive();\n}",
+        imageUrl: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1000&auto=format&fit=crop",
         date: new Date().toISOString()
     },
+
     {
         id: "2",
-        title: "Understanding TypeScript Generics",
-        content: "Generics allow you to create reusable components that work with a variety of types rather than a single one. This adds flexibility while maintaining type safety.",
-        codeSnippet: "function identity<T>(arg: T): T {\n  return arg;\n}",
-        imageUrl: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=1000&auto=format&fit=crop",
+        title: "The Art of Being Quiet but Observing Everything",
+        content: "People think I’m quiet because I have nothing to say. Reality is the opposite. I’m quiet because I’m collecting data. Every tone shift, every micro-expression, every contradiction in what someone says—I notice all of it automatically. It’s not intentional; it’s just how my brain is wired. Being an observer means I understand people more deeply than they realize, and sometimes more deeply than they understand themselves. It’s a strange superpower: invisible, silent, and sometimes inconvenient. But it’s mine.",
+        codeSnippet: "// Social Mode v2.1\nfunction interact() {\n  listen();\n  observe();\n  overanalyze();\n  speak_if_required();\n}",
+        imageUrl: "https://images.unsplash.com/photo-1528747045269-390fe33c19d3?q=80&w=1000&auto=format&fit=crop",
         date: new Date().toISOString()
     }
+
+
 ];
