@@ -29,192 +29,208 @@ export const projects: Project[] = [
         videos: [],
 
         content: `
-
-            # Kivy & Tkinter Applications — Collection Page
-
             ## 1. Overview
-            This collection brings together a range of small but useful GUI projects created while learning Kivy and Tkinter. Each app focuses on clear layout structure, event-driven logic, simple animations, and readable code.  
-            Kivy apps lean toward mobile-friendly interfaces and custom visuals, while Tkinter apps focus on quick desktop utilities.
+            AI Tutor is an intelligent educational assistant designed to help students learn more effectively by adapting to their learning style, pace, and academic level.
+            The system allows students to upload study materials (PDFs, PPTs, images, or text files), automatically extracts and summarizes the content using AI, and presents structured, easy-to-understand notes.
+
+            Unlike generic note generators, this tutor focuses on personalization, clarity, and offline-friendly deployment, making it suitable for academic demonstrations and real-world student use.
+
+            This project was built as a capstone project during the 2nd semester at Bennett University (MCA – AI/ML).
 
             ---
 
-            ## 2. Included Apps (Short Summaries)
+            ## 2. Problem Statement
+            Many students struggle because learning platforms:
+            - present the same material to everyone
+            - do not adapt to individual learning speed
+            - overwhelm students with dense content
+            - lack structured revision support
 
-            ### Date Appointment (Kivy)
-            - **Purpose:** A simple appointment scheduler with date/time pickers and local storage.
-            - **Features:** KivyMD date/time picker, JSON persistence, validation, confirmation dialogs, optional WhatsApp Web integration.
-            - **Use case:** Demonstrates forms, dialogs, app flow, and external app triggers.
+            Additionally, most AI-based education tools are:
+            - cloud-heavy
+            - opaque in reasoning
+            - difficult to explain academically
 
-            **Snippet (saving appointment):**
-            \`\`\`python
-            def save_appointment(title, date_str, time_str):
-                appt = {"title": title, "date": date_str, "time": time_str}
-                with open("appointments.json", "a") as f:
-                    f.write(json.dumps(appt) + "\\n")
-            \`\`\`
-
-            ---
-
-            ### Heart Sync (Kivy)
-            - **Purpose:** A heartbeat simulator built for practicing animations and timing.
-            - **Features:** BPM slider, pulsing effect, start/stop, optional beep sound.
-            - **Use case:** Demonstrates Clock scheduling, canvas animations, scaling effects.
-
-            **Snippet (Clock-based animation):**
-            \`\`\`python
-            from kivy.clock import Clock
-
-            def start_heartbeat(self, bpm):
-                interval = 60.0 / bpm
-                self.heartbeat_event = Clock.schedule_interval(self.toggle_beat, interval)
-            \`\`\`
+            The goal of this project was to build a clear, explainable, AI-powered tutor that:
+            - adapts to a student’s learning style
+            - simplifies uploaded study material
+            - works with common academic file formats
+            - produces structured, readable notes
+            - can be presented and defended in an academic setting
 
             ---
 
-            ### Hangman (Kivy)
-            - **Purpose:** A fully interactive Hangman game.
-            - **Features:** Word bank, masked display, lives counter, on-screen keyboard.
-            - **Use case:** Great example of game state, UI updates, and canvas drawing.
-
-            **Snippet (guess handler):**
-            \`\`\`python
-            def guess_letter(letter):
-                if letter in word:
-                    reveal_letter(letter)
-                else:
-                    lives -= 1
-                    update_hangman_canvas(lives)
-            \`\`\`
+            ## 3. Objectives
+            - Build a full-stack educational assistant using Flask.
+            - Allow secure user registration and login.
+            - Let users select their grade / academic level.
+            - Accept PDFs, PPTs, images, and text files as input.
+            - Extract and summarize content using AI models.
+            - Identify learning style and learning speed via a quiz.
+            - Generate personalized notes accordingly.
+            - Provide downloadable notes in DOCX format.
+            - Maintain a clean, beginner-friendly system architecture.
 
             ---
 
-            ### Rock-Paper-Scissors (CLI & UI)
-            - **Purpose:** Two versions — CLI for logic and Kivy UI for visuals.
-            - **Features:** Best-of-N mode, scoring, simple animations.
-            - **Use case:** Shows how CLI logic can be elevated into a full UI.
+            ## 4. System Architecture (Text Description)
 
-            **Snippet (CLI core):**
-            \`\`\`python
-            import random
-            def play_round(player):
-                comp = random.choice(['rock','paper','scissors'])
-                # determine winner
-            \`\`\`
+            **Frontend**
+            - HTML/CSS templates
+            - Upload forms
+            - Quiz interface
+            - Progress indicators (loading / waiting timers)
 
-            ---
+            **Backend (Flask)**
+            - User authentication
+            - File handling & validation
+            - Text extraction pipelines
+            - AI summarization logic
+            - Learning-style adaptation
+            - Note generation & formatting
 
-            ### Calculator (Tkinter)
-            - **Purpose:** A clean, standard calculator app.
-            - **Features:** Grid-based buttons, clear/backspace, decimals, keyboard bindings.
-            - **Use case:** Demonstrates StringVar, dynamic updates, and safe expression parsing.
+            **AI Layer**
+            - Text summarization models (Gemini / HuggingFace BART / local LLMs depending on configuration)
+            - Rule-based adaptation for learning speed
 
-            **Snippet (button callback):**
-            \`\`\`python
-            def on_button_click(char):
-                current = display_var.get()
-                display_var.set(current + char)
-            \`\`\`
+            **Storage**
+            - User data (auth, preferences)
+            - Uploaded files
+            - Generated summaries
 
-            ---
-
-            ### Number Guessing (Tkinter)
-            - **Purpose:** A simple higher/lower guessing game.
-            - **Features:** Hints, attempt counting, replay dialog.
-            - **Use case:** Good for input parsing, simple loops, messageboxes.
-
-            **Snippet:**
-            \`\`\`python
-            target = random.randint(1,100)
-            def check_guess(val):
-                if val == target:
-                    show_win()
-                elif val < target:
-                    hint('Higher')
-                else:
-                    hint('Lower')
-            \`\`\`
+            **Output**
+            - Clean notes page
+            - Downloadable DOCX file
 
             ---
 
-            ### Text Adventure (Tkinter)
-            - **Purpose:** A minimal branching story adventure.
-            - **Features:** JSON-based story nodes, choice buttons, save/load.
-            - **Use case:** Demonstrates narrative state machines and UI updates.
+            ## 5. Learning Style & Speed Detection
+            The tutor uses a short quiz to determine:
 
-            **JSON node example:**
-            \`\`\`json
-            { "id": "start", "text": "You awake in a room...", "choices": [{"label":"Look around","target":"look"}] }
-            \`\`\`
+            **Learning Style**
+            - Visual
+            - Text-based
+            - Mixed
 
-            ---
+            **Learning Speed**
+            - Slow
+            - Average
+            - Fast
 
-            ### Kalaa Tokri (Kivy) — Product Catalog Viewer
-            - **Purpose:** A clean product viewer built to practice layouts and scroll views.
-            - **Features:** Scrollable cards, images, descriptions, responsive design.
-            - **Note:** This is *not* an e-commerce system — no cart/checkout, just catalog UI.
+            These parameters influence:
+            - length of explanations
+            - number of examples
+            - formatting density
+            - pacing of generated content
 
-            **Snippet (loading products):**
-            \`\`\`python
-            with open("products.json") as f:
-                products = json.load(f)
-
-            def load_items(rv):
-                rv.data = [
-                    {"image": p["image"], "title": p["title"], "desc": p["desc"]}
-                    for p in products
-                ]
-            \`\`\`
+            This ensures the same topic is explained differently depending on the learner.
 
             ---
 
-            ### Currency Converter (VND → INR)
-            - **Purpose:** A quick conversion utility.
-            - **Features:** Input field, convert button, static rate, clean Tkinter UI.
-            - **Use case:** Demonstrates small utility creation and formatting.
+            ## 6. File Processing & Preprocessing
+            **Supported formats:**
+            - PDF
+            - PPTX
+            - TXT
+            - Images (OCR)
 
-            **Snippet (conversion):**
-            \`\`\`python
-            VND_to_INR = 0.0034
-            def convert(amount_vnd):
-                return round(amount_vnd * VND_to_INR, 2)
-            \`\`\`
-
-            ---
-
-            ## 3. Shared Implementation Tips
-            - Use JSON for lightweight storage; SQLite for multi-screen persistence.
-            - Buildozer for Android packaging (Kivy), PyInstaller for desktop.
-            - Validate every input (numbers, dates) to avoid UI crashes.
-            - Keep layout, logic, and data separated — simplifies debugging.
+            **Processing steps:**
+            - Validate file type and size
+            - Extract raw text (PyPDF, python-pptx, OCR for images)
+            - Clean whitespace and noise
+            - Chunk text for AI processing
+            - Feed into summarization pipeline
 
             ---
 
-            ## 4. Example Requirements (Combined)
-            \`\`\`
-            kivy
-            kivymd
-            pillow
-            python-dateutil
-            pytz
-            requests
-            pyinstaller
-            \`\`\`
+            ## 7. AI Summarization & Note Generation
+
+            **Summarization Flow**
+            - Input text → chunking
+            - Chunk-level summarization
+            - Merge and re-structure content
+            - Adapt tone and depth based on learning profile
+
+            **Output Structure**
+            - Headings
+            - Bullet points
+            - Examples
+            - Short explanations instead of dense paragraphs
+
+            This makes the notes revision-friendly, not just concise.
 
             ---
 
-            ## 5. Quick Testing Checklist
-            - Test Kivy UIs on multiple screen sizes/orientations.
-            - Verify Tkinter keyboard shortcuts and focus handling.
-            - Add tests for game/utility logic where applicable.
-            - Use try/except + logging for crash diagnosis.
+            ## 8. Tech Stack
+
+            **Languages**
+            - Python
+
+            **Frameworks**
+            - Flask
+
+            **Libraries**
+            - Hugging Face Transformers (BART)
+            - Google Gemini API (optional configuration)
+            - PyPDF / python-pptx
+            - Pillow / OCR tools
+            - SQLAlchemy
+
+            **File Output**
+            - python-docx (DOCX export)
 
             ---
 
-            ## 6. Where to Go Next
-            - Build APKs for Kivy games.
-            - Add sound/animations for polish.
-            - Add screenshots or GIFs to your portfolio.
-            - Convert small apps into standalone executables.
+            ## 9. Key Features
+
+            **A. Personalized Learning**
+            Notes adapt to:
+            - student’s pace
+            - preferred explanation depth
+            - academic level
+
+            **B. Multi-Format File Support**
+            Handles real-world student materials, not just plain text.
+
+            **C. Explainable AI Design**
+            Every stage of the pipeline is transparent and explainable — ideal for academic evaluation.
+
+            **D. Downloadable Notes**
+            Students can download generated notes as DOCX for offline study.
+
+            **E. Clean UX**
+            Includes:
+            - loading indicators
+            - progress feedback
+            - readable layouts
+
+            ---
+
+            ## 10. Challenges Faced
+            - Handling inconsistent formatting in PDFs and PPTs
+            - Preventing information loss during summarization
+            - Balancing brevity vs clarity
+            - Designing learning-style adaptation without overfitting
+            - Keeping the system lightweight and demo-friendly
+
+            ---
+
+            ## 11. Results
+            - Successfully generated structured notes from real academic material
+            - Improved readability compared to raw textbook content
+            - Clear differentiation between slow/average/fast learner outputs
+            - Stable performance on standard CPU systems
+            - Well-received as an academic capstone demonstration
+
+            ---
+
+            ## 12. Future Improvements
+            - Add spaced-repetition based revision scheduling
+            - Integrate quiz generation from notes
+            - Add parent/mentor progress dashboards
+            - Support multilingual content
+            - Integrate speech-based explanations
+            - Deploy as a hosted SaaS or campus-wide tool
             `
     },
 
@@ -856,24 +872,14 @@ export const projects: Project[] = [
     {
         id: "fuzzy-disease-consultant",
         title: "Fuzzy Logic Home Disease Consultant",
-        description:
-            "A lightweight fuzzy-logic based health assistant that interprets everyday symptoms and estimates the likelihood of common illnesses using smooth, human-like reasoning.",
-
-        codeSnippet:
-            "temp['fever'] = fuzz.trimf(temp.universe, [97, 101, 105])\nrule1 = ctrl.Rule(temp['fever'] & cough['high'], disease['flu'])",
-
-        imageUrl:
-            "https://images.pexels.com/photos/7195122/pexels-photo-7195122.jpeg",
-
-        githubUrl:
-            "https://github.com/AnnaNutzz/AI-Powered-Home-Disease-Consultant",
-
+        description: "A lightweight fuzzy-logic based health assistant that interprets everyday symptoms and estimates the likelihood of common illnesses using smooth, human-like reasoning.",
+        codeSnippet: "temp['fever'] = fuzz.trimf(temp.universe, [97, 101, 105])\nrule1 = ctrl.Rule(temp['fever'] & cough['high'], disease['flu'])",
+        imageUrl: "https://images.pexels.com/photos/7195122/pexels-photo-7195122.jpeg",
+        githubUrl: "https://github.com/AnnaNutzz/AI-Powered-Home-Disease-Consultant",
         demoUrl: "",
-
         tags: ["Python", "Fuzzy Logic", "scikit-fuzzy", "AI in Healthcare"],
-
         images: [],
-        videos: [],
+        videos: ["/diseasec1.mp4"],
 
         content: `
             ## 1. Overview
@@ -1164,18 +1170,11 @@ export const projects: Project[] = [
     {
         id: "kivy-tkinter-apps",
         title: "Kivy & Tkinter Applications (Collection)",
-        description:
-            "A curated collection of practical GUI projects built using Kivy and Tkinter — ranging from games to utilities to mini-tools. This set showcases hands-on experience with widget systems, animations, event loops, responsive layouts, JSON data handling, and the design of clean, maintainable UI logic.",
-
-        codeSnippet:
-            "from kivy.app import App\nfrom kivy.uix.boxlayout import BoxLayout\n\nclass MainScreen(BoxLayout):\n    pass\n\nclass MyApp(App):\n    def build(self):\n        return MainScreen()\n\nif __name__ == '__main__':\n    MyApp().run()",
-
+        description: "A curated collection of practical GUI projects built using Kivy and Tkinter — ranging from games to utilities to mini-tools. This set showcases hands-on experience with widget systems, animations, event loops, responsive layouts, JSON data handling, and the design of clean, maintainable UI logic.",
+        codeSnippet: "from kivy.app import App\nfrom kivy.uix.boxlayout import BoxLayout\n\nclass MainScreen(BoxLayout):\n    pass\n\nclass MyApp(App):\n    def build(self):\n        return MainScreen()\n\nif __name__ == '__main__':\n    MyApp().run()",
         imageUrl: "https://images.pexels.com/photos/682933/pexels-photo-682933.jpeg",
-
         githubUrl: "https://github.com/AnnaNutzz/Kivy-Tkinter-Apps",
-
         demoUrl: "",
-
         tags: ["Python", "Kivy", "Tkinter", "GUI", "Games", "Utilities"],
 
         content: `
@@ -1303,7 +1302,7 @@ export const projects: Project[] = [
                 ]</code></pre>
             </div>
             <div class="w-[70px] shrink-0">
-            <img src="https://placehold.co/300x200?text=Kalaa+Tokri" class="w-full rounded-lg shadow-lg" />
+            <video src="/kalaa1.mp4" class="w-full rounded-lg shadow-lg" controls></video>
             </div>
             </div>
 
@@ -1325,7 +1324,7 @@ export const projects: Project[] = [
                 return round(amount_vnd * VND_to_INR, 2)</code></pre>
             </div>
             <div class="w-[70px] shrink-0">
-            <video src="/data/exchange1.mp4" class="w-full rounded-lg shadow-lg" controls></video>
+            <video src="/exchange1.mp4" class="w-full rounded-lg shadow-lg" controls></video>
             </div>
             </div>
 
