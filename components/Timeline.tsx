@@ -4,16 +4,16 @@ import SpriteAnimation from "./SpriteAnimation";
 export default function Timeline() {
     const events = [
         {
-            year: "2026 (Expected)",
+            year: "2026 (Current)",
             title: "Graduation",
-            desc: "Complete Bennett University 4th sem by June/July.",
-            current: false
+            desc: "Complete Bennett University 4th sem by June/July 2026 (3rd Sem CGPA 7.75)",
+            current: true
         },
         {
             year: "2025",
-            title: "Bennett University (Current)",
-            desc: "Postgraduate AI/ML (3rd Sem, CGPA 7.68). Specialization: Real-time emotion detection. Projects: AI Tutor, ASL Gesture Recognition, Fuzzy Logic Consultant.",
-            current: true,
+            title: "Bennett University",
+            desc: "Postgraduate AI/ML. Specialization: Real-time emotion detection. Projects: AI Tutor, ASL Gesture Recognition, Fuzzy Logic Consultant.",
+            current: false,
             logo: "bennett"
         },
         {
