@@ -234,6 +234,7 @@ export const projects: Project[] = [
             `
     },
 
+
     {
         id: "emotion-detection",
         title: "Real-Time Emotion Detection",
@@ -466,6 +467,7 @@ export const projects: Project[] = [
                                             
         `
     },
+
 
     {
         id: "asl-gesture-recognition",
@@ -700,6 +702,7 @@ export const projects: Project[] = [
             `
     },
 
+
     {
         id: "meeting-transcriber",
         title: "Meeting Transcriber & Summarizer",
@@ -868,6 +871,312 @@ export const projects: Project[] = [
             - Offline keyword search across transcripts  
             `
     },
+
+
+    {
+        id: "custom-object-detection",
+        title: "Custom Object Detection System",
+        description: "A deep learning–based object detection system trained on custom datasets to detect user-defined objects in images and real-time video streams. The system focuses on practical dataset preparation, model training, and inference using OpenCV and TensorFlow.",
+        codeSnippet: "detections = model.predict(frame)\nboxes = decode_predictions(detections)\ndraw_boxes(frame, boxes)",
+        imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+        githubUrl: "",
+        demoUrl: "",
+        tags: ["Python", "Computer Vision", "Deep Learning", "Custom Dataset"],
+        images: [],
+        videos: [],
+
+        content: `
+            ## 1. Overview
+            This project implements a custom object detection pipeline that allows detection of non-standard objects not available in pre-trained datasets.  
+            The focus is on dataset creation, annotation, model training, and real-time inference using OpenCV.
+
+            ---
+
+            ## 2. Problem Statement
+            Pre-trained object detection models often fail when:
+            - objects are domain-specific  
+            - lighting and camera angles vary  
+            - datasets are small or custom  
+
+            This project solves the problem by enabling fully customizable object detection.
+
+            ---
+
+            ## 3. Objectives
+            - Train object detection models on custom datasets  
+            - Support real-time webcam inference  
+            - Visualize bounding boxes with class labels  
+            - Maintain modular and extensible code  
+
+            ---
+
+            ## 4. Architecture (Text Description)
+
+            **Input**  
+            - Image / Video / Webcam feed  
+
+            **Processing Pipeline**  
+            1. Frame capture  
+            2. Preprocessing (resize, normalize)  
+            3. CNN-based detection model  
+            4. Bounding box decoding  
+            5. Visualization using OpenCV  
+
+            **Output**  
+            - Labeled bounding boxes  
+            - Confidence scores  
+
+            ---
+
+            ## 5. Tech Stack
+            - Python  
+            - TensorFlow / Keras  
+            - OpenCV  
+            - NumPy  
+
+            ---
+
+            ## 6. Challenges
+            - Limited dataset size  
+            - Class imbalance  
+            - Overfitting on custom objects  
+
+            ---
+
+            ## 7. Future Improvements
+            - YOLO-based implementation  
+            - Data augmentation automation  
+            - Export to ONNX for deployment  
+        `
+    },
+
+
+    {
+        id: "pcb-inspection",
+        title: "Automated PCB Inspection System",
+        description: "A computer vision–based inspection system for printed circuit boards that detects missing components, misalignment, and structural defects using image processing and ML techniques.",
+        codeSnippet: "diff = cv2.absdiff(reference_pcb, test_pcb)\ndefects = threshold(diff)",
+        imageUrl: "https://images.pexels.com/photos/924226/pexels-photo-924226.jpeg",
+        githubUrl: "",
+        demoUrl: "",
+        tags: ["Python", "OpenCV", "Image Processing", "Industrial Vision"],
+        images: [],
+        videos: [],
+
+        content: `
+            ## 1. Overview
+            This project focuses on automated inspection of PCBs using classical image processing and ML-based techniques.  
+            It compares reference PCB images with test images to identify defects.
+
+            ---
+
+            ## 2. Problem Statement
+            Manual PCB inspection is:
+            - time-consuming  
+            - error-prone  
+            - expensive at scale  
+
+            Automated vision systems improve consistency and speed.
+
+            ---
+
+            ## 3. Objectives
+            - Detect missing or misaligned components  
+            - Highlight defective regions  
+            - Support high-resolution PCB images  
+            - Enable fast inspection  
+
+            ---
+
+            ## 4. Architecture
+
+            **Input**  
+            - Reference PCB image  
+            - Test PCB image  
+
+            **Processing Pipeline**  
+            1. Image alignment  
+            2. Grayscale & filtering  
+            3. Image differencing  
+            4. Contour detection  
+            5. Defect marking  
+
+            **Output**  
+            - Defect masks  
+            - Annotated PCB image  
+
+            ---
+
+            ## 5. Tech Stack
+            - Python  
+            - OpenCV  
+            - NumPy  
+
+            ---
+
+            ## 6. Challenges
+            - Image alignment precision  
+            - Noise and lighting variation  
+            - Small defect detection  
+
+            ---
+
+            ## 7. Future Improvements
+            - CNN-based defect classification  
+            - Real-time camera integration  
+            - Production-line optimization  
+        `
+    },
+
+
+    {
+        id: "noise-floor",
+        title: "NoiseFloor – Ambient Noise Analysis Tool",
+        description: "A signal-processing based system that measures and analyzes ambient noise levels from audio recordings, estimating noise floors and visualizing frequency-domain characteristics.",
+        codeSnippet: "fft = np.fft.fft(audio)\nnoise_floor = np.mean(np.abs(fft))",
+        imageUrl: "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg",
+        githubUrl: "",
+        demoUrl: "",
+        tags: ["Python", "Signal Processing", "Audio Analysis"],
+        images: [],
+        videos: [],
+
+        content: `
+            ## 1. Overview
+            NoiseFloor is an audio analysis project that estimates background noise levels from recorded audio.  
+            It is useful in signal quality evaluation, recording environments, and preprocessing pipelines.
+
+            ---
+
+            ## 2. Problem Statement
+            Background noise degrades:
+            - speech recognition  
+            - audio clarity  
+            - downstream ML performance  
+
+            Quantifying noise is a necessary first step.
+
+            ---
+
+            ## 3. Objectives
+            - Compute noise floor from raw audio  
+            - Visualize time and frequency domains  
+            - Enable preprocessing decisions  
+
+            ---
+
+            ## 4. Architecture
+
+            **Input**  
+            - WAV / MP3 audio file  
+
+            **Processing Pipeline**  
+            1. Audio loading  
+            2. FFT computation  
+            3. Noise estimation  
+            4. Visualization  
+
+            **Output**  
+            - Noise floor metrics  
+            - Spectrograms  
+
+            ---
+
+            ## 5. Tech Stack
+            - Python  
+            - NumPy  
+            - Matplotlib  
+
+            ---
+
+            ## 6. Challenges
+            - Variable ambient conditions  
+            - Differentiating noise vs signal  
+
+            ---
+
+            ## 7. Future Improvements
+            - Adaptive noise profiling  
+            - Integration with speech pipelines  
+            - Real-time analysis  
+        `
+    },
+
+
+    {
+        id: "pocket-sense",
+        title: "PocketSense – Personal Expense Tracker",
+        description: "A personal finance tracking application that helps users log, categorize, and analyze daily expenses with simple visual insights and structured data storage.",
+        codeSnippet: "db.insert({ amount, category, date })\nsummary = calculateMonthlySpend()",
+        imageUrl: "https://images.pexels.com/photos/4386379/pexels-photo-4386379.jpeg",
+        githubUrl: "",
+        demoUrl: "",
+        tags: ["Python", "Finance App", "Data Tracking"],
+        images: [],
+        videos: [],
+
+        content: `
+            ## 1. Overview
+            PocketSense is a lightweight expense tracking application designed to build awareness around personal spending habits.  
+            It emphasizes simplicity, clarity, and useful summaries.
+
+            ---
+
+            ## 2. Problem Statement
+            Many people:
+            - underestimate spending  
+            - lack clear expense categorization  
+            - do not review patterns  
+
+            PocketSense addresses this gap.
+
+            ---
+
+            ## 3. Objectives
+            - Log daily expenses  
+            - Categorize spending  
+            - Generate summaries  
+            - Encourage financial awareness  
+
+            ---
+
+            ## 4. Architecture
+
+            **Input**  
+            - User-entered expense data  
+
+            **Processing Pipeline**  
+            1. Data validation  
+            2. Category mapping  
+            3. Aggregation  
+            4. Summary generation  
+
+            **Output**  
+            - Monthly breakdowns  
+            - Category-wise insights  
+
+            ---
+
+            ## 5. Tech Stack
+            - Python  
+            - SQLite / MySQL  
+            - Basic data visualization  
+
+            ---
+
+            ## 6. Challenges
+            - Designing intuitive categorization  
+            - Keeping the interface minimal  
+
+            ---
+
+            ## 7. Future Improvements
+            - Charts and trends  
+            - Budget alerts  
+            - Mobile-friendly UI  
+        `
+    },
+
 
     {
         id: "fuzzy-disease-consultant",
@@ -1227,31 +1536,6 @@ export const projects: Project[] = [
             </div>
             </div>
 
-
-            <div class="flex flex-col md:flex-row gap-8 items-center mb-12 border-b border-white/10 pb-12">
-            <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-2">Heart Sync (Kivy)</h3>
-            <a href="https://github.com/AnnaNutzz/Heart-Sync" target="_blank" class="text-primary hover:underline mb-4 inline-block">GitHub Repository</a>
-            <p class="mb-4">A visual heartbeat simulator built to understand animation timing.</p>
-            <p class="mb-2">Key learning points:</p>
-            <ul class="list-disc pl-5 mb-4 space-y-1">
-            <li>dynamic scaling animations</li>
-            <li>interval-based updates</li>
-            <li>UI/UX feedback loops</li>
-            <li>controlling visuals using BPM input</li>
-            </ul>
-            <p class="font-bold mb-2">Snippet:</p>
-            <pre class="bg-[#1e1e20] p-4 rounded-lg overflow-x-auto text-sm text-pink-300 font-mono"><code>from kivy.clock import Clock
-            def start_heartbeat(self, bpm):
-                interval = 60.0 / bpm
-                self.heartbeat_event = Clock.schedule_interval(self.toggle_beat, interval)</code></pre>
-            </div>
-            <div class="w-[150px] shrink-0">
-            <img src="https://placehold.co/300x200?text=Heart+Sync" class="w-full rounded-lg shadow-lg" />
-            </div>
-            </div>
-
-
             <div class="flex flex-col md:flex-row gap-8 items-center mb-12 border-b border-white/10 pb-12">
             <div class="flex-1">
             <h3 class="text-2xl font-bold mb-2">Text Adventure (CLI)</h3>
@@ -1309,7 +1593,7 @@ export const projects: Project[] = [
 
             <div class="flex flex-col md:flex-row gap-8 items-center mb-12">
             <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-2">VND → INR Currency Converter (Tkinter)</h3>
+            <h3 class="text-2xl font-bold mb-2">VND → INR Currency Converter (Kivy)</h3>
             <a href="https://github.com/AnnaNutzz/Currency-Exchange" target="_blank" class="text-primary hover:underline mb-4 inline-block">GitHub Repository</a>
             <p class="mb-4">A simple conversion tool created to understand:</p>
             <ul class="list-disc pl-5 mb-4 space-y-1">
@@ -1317,6 +1601,7 @@ export const projects: Project[] = [
             <li>formatting</li>
             <li>button actions</li>
             <li>standalone utility app structure</li>
+            <li>for mother's ease of access when she went to 'nam</li>
             </ul>
             <p class="font-bold mb-2">Snippet:</p>
             <pre class="bg-[#1e1e20] p-4 rounded-lg overflow-x-auto text-sm text-pink-300 font-mono"><code>VND_to_INR = 0.0034
