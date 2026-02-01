@@ -1222,7 +1222,7 @@ export const projects: Project[] = [
                 with open("appointments.json", "a") as f:
                     f.write(json.dumps(appt) + "\\n")</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <video src="/dateme1.mp4" class="w-full rounded-lg shadow-lg" controls></video>
             </div>
             </div>
@@ -1246,7 +1246,7 @@ export const projects: Project[] = [
                 interval = 60.0 / bpm
                 self.heartbeat_event = Clock.schedule_interval(self.toggle_beat, interval)</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <img src="https://placehold.co/300x200?text=Heart+Sync" class="w-full rounded-lg shadow-lg" />
             </div>
             </div>
@@ -1271,7 +1271,7 @@ export const projects: Project[] = [
             "choices": [{"label": "Look around", "target": "look"}]
             }</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <img src="https://placehold.co/300x200?text=Text+Adventure" class="w-full rounded-lg shadow-lg" />
             </div>
             </div>
@@ -1301,7 +1301,7 @@ export const projects: Project[] = [
                     for p in products
                 ]</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <video src="/kalaa1.mp4" class="w-full rounded-lg shadow-lg" controls></video>
             </div>
             </div>
@@ -1323,7 +1323,7 @@ export const projects: Project[] = [
             def convert(amount_vnd):
                 return round(amount_vnd * VND_to_INR, 2)</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <video src="/exchange1.mp4" class="w-full rounded-lg shadow-lg" controls></video>
             </div>
             </div>
@@ -1345,7 +1345,7 @@ export const projects: Project[] = [
                 comp = random.choice(['rock','paper','scissors'])
                 # determine winner</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <img src="https://placehold.co/300x200?text=RPS" class="w-full rounded-lg shadow-lg" />
             </div>
             </div>
@@ -1367,7 +1367,7 @@ export const projects: Project[] = [
                 current = display_var.get()
                 display_var.set(current + char)</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             </div>
             </div>
 
@@ -1393,7 +1393,7 @@ export const projects: Project[] = [
                 else:
                     hint('Lower')</code></pre>
             </div>
-            <div class="w-[70px] shrink-0">
+            <div class="w-[300px] shrink-0">
             <img src="https://placehold.co/300x200?text=Number+Guessing" class="w-full rounded-lg shadow-lg" />
             </div>
             </div>
