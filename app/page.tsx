@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import CurrentFocus from "@/components/CurrentFocus";
 import Hardware from "@/components/Hardware";
 import Timeline from "@/components/Timeline";
+import Skills from "@/components/Skills";
 import Stats from "@/components/Stats";
 import Snippets from "@/components/Snippets";
 import Experiments from "@/components/Experiments";
@@ -32,6 +33,9 @@ export default function Home() {
 
                 {/* Timeline Section */}
                 <Timeline />
+
+                {/* Skills Section */}
+                <Skills />
 
                 {/* Projects Section */}
                 <section id="projects" className="scroll-mt-24">
