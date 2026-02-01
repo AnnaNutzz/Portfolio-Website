@@ -81,7 +81,7 @@ export default function Sidebar() {
                     {/* Footer */}
                     <div className="mt-8 pt-6 border-t border-white/10 text-xs text-center text-gray-500">
                         <p>© {new Date().getFullYear()} Ahana Kaur</p>
-                        <p className="mt-1">Built with Next.js & Fuwari</p>
+                        <p className="mt-1">Built with Next.js & Inspiration from Fuwari</p>
                     </div>
                 </div>
             </aside>
