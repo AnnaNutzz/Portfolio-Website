@@ -55,6 +55,7 @@ export default function Skills() {
       "Git",
       "GitHub",
       "VS Code",
+      "Jenkins",
       "Android Studio",
       "Kivy",
       "KivyMD",
