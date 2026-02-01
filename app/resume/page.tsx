@@ -29,7 +29,7 @@ export default function Resume() {
                     </div>
                     <div className="flex gap-4">
                         <a
-                            href="/resume.docx"
+                            href="/Resume(ATS-friendly)-sf.pdf"
                             download
                             className="flex items-center gap-2 bg-white text-black px-6 py-2 rounded-md font-medium hover:bg-gray-200 transition-colors"
                         >
