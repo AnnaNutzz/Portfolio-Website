@@ -1,6 +1,6 @@
 "use client";
 import ScrollAnimation from "./ScrollAnimation";
-import { Users, Zap, FolderKanban, Sparkles } from "lucide-react";
+import { Users, Zap, FolderKanban, Sparkles, Network, Crown, Flame, Scale, ShieldCheck, BadgeCheck } from "lucide-react";
 
 export default function Skills() {
   const technicalSkills = {
@@ -72,26 +72,37 @@ export default function Skills() {
 
   const softSkills = [
     {
-      icon: Users,
-      title: "Independent Execution",
-      desc: "End-to-end ownership of academic and personal projects"
+        icon: Crown,
+        title: "Strategic Team Leadership",
+        desc: "Naturally assumes leadership roles and coordinates teams through structured delegation and consensus-based decisions."
     },
     {
-      icon: Zap,
-      title: "Problem Solving",
-      desc: "Strong debugging and algorithmic thinking in Python"
+        icon: Network,
+        title: "Strength-Based Delegation",
+        desc: "Assigns responsibilities based on individual capability to maximize efficiency and overall output quality."
     },
     {
-      icon: FolderKanban,
-      title: "Project Structuring",
-      desc: "Breaking complex ideas into clear, buildable systems"
+        icon: Flame,
+        title: "Crisis Management",
+        desc: "Maintains composure under deadline pressure, absorbs critical workload when required, and motivates teammates toward completion."
     },
     {
-      icon: Sparkles,
-      title: "Learning Agility",
-      desc: "Quickly picking up new frameworks and AI tools"
+        icon: Scale,
+        title: "Conflict Resolution",
+        desc: "Resolves disagreements through open discussion and consensus-building without escalating tensions."
+    },
+    {
+        icon: ShieldCheck,
+        title: "Accountability & Ownership",
+        desc: "Takes full responsibility for deliverables, especially during high-pressure situations."
+    },
+    {
+        icon: BadgeCheck,
+        title: "Professional Integrity",
+        desc: "Ensures fair credit distribution and maintains ethical collaboration practices."
     }
-  ];
+    ];
+
 
 
     const renderSkillTag = (skill: string, highlight: boolean = false) => (
