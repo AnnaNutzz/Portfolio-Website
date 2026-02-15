@@ -5,7 +5,7 @@ export default function Timeline() {
     const events = [
         {
             year: "2026 (Current)",
-            title: "Graduation",
+            title: "Post Graduation",
             desc: "Complete Bennett University 4th sem by June/July 2026 (3rd Sem CGPA 7.75)",
             current: true
         },
@@ -25,7 +25,7 @@ export default function Timeline() {
         },
         {
             year: "2023",
-            title: "Presidency University",
+            title: "Presidency University - Graduation",
             desc: "4th & 5th Sem coursework.",
             current: false
         },
