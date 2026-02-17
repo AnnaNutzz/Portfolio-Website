@@ -18,7 +18,7 @@ export default function Hero() {
                 </p>
 
                 <div className="space-y-2 text-gray-300">
-                    <p>Postgraduate AI/ML student at Bennett University (current CGPA 7.68). Focused on real-time computer vision (capstone), generative/assistive products, and independent ML systems engineering.</p>
+                    <p>Postgraduate AI/ML student at Bennett University (current CGPA 7.75). Focused on real-time computer vision (capstone), generative/assistive products, and independent ML systems engineering.</p>
                     <ul className="list-disc list-inside text-gray-400 space-y-1 ml-2">
                         <li><strong>Capstone & coursework:</strong> delivered a real-time vision capstone and a full AI Tutor product in university subjects.</li>
                         <li><strong>Independent engineering:</strong> build, train and productionize ML systems on my own.</li>
