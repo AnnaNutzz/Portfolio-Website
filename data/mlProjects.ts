@@ -19,12 +19,12 @@ export const phases = [
 
 export const mlProjects: MLProject[] = [
     // Phase 1 — Baby ML But Beautiful (Days 1–10)
-    { day: 1, title: "Linear Regression From Scratch", phase: 1, status: "planned", tags: ["Regression", "Math"] },
-    { day: 2, title: "Logistic Regression From Scratch", phase: 1, status: "planned", tags: ["Classification", "Math"] },
-    { day: 3, title: "KNN Classifier", phase: 1, status: "planned", tags: ["KNN", "Distance Functions"] },
-    { day: 4, title: "Naive Bayes – SMS Spam Filter", phase: 1, status: "planned", tags: ["NLP", "Bayes"] },
-    { day: 5, title: "Decision Trees – Entropy & Gini", phase: 1, status: "planned", tags: ["Trees", "Visualization"] },
-    { day: 6, title: "Random Forest – Feature Importance", phase: 1, status: "planned", tags: ["Ensemble", "Explainability"] },
+    { day: 1, title: "Linear Regression From Scratch", phase: 1, status: "done", tags: ["Regression", "Math"] },
+    { day: 2, title: "Logistic Regression From Scratch", phase: 1, status: "done", tags: ["Classification", "Math"] },
+    { day: 3, title: "KNN Classifier", phase: 1, status: "done", tags: ["KNN", "Distance Functions"] },
+    { day: 4, title: "Naive Bayes – SMS Spam Filter", phase: 1, status: "done", tags: ["NLP", "Bayes"] },
+    { day: 5, title: "Decision Trees – Entropy & Gini", phase: 1, status: "done", tags: ["Trees", "Visualization"] },
+    { day: 6, title: "Random Forest – Feature Importance", phase: 1, status: "in-progress", tags: ["Ensemble", "Explainability"] },
     { day: 7, title: "K-Means – Image Color Quantization", phase: 1, status: "planned", tags: ["Clustering", "Images"] },
     { day: 8, title: "Hierarchical Clustering – Dendrogram", phase: 1, status: "planned", tags: ["Clustering", "Visualization"] },
     { day: 9, title: "PCA – Face Dimensionality Reduction", phase: 1, status: "planned", tags: ["PCA", "Faces"] },
