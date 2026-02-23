@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Home, Folder, BookOpen, FileText, Settings, Menu, X, Github, Mail } from "lucide-react";
+import { Home, Folder, BookOpen, FileText, Settings, Menu, X, Github, Mail, Linkedin } from "lucide-react";
 import SpriteAnimation from "./SpriteAnimation";
 
 const navItems = [
@@ -50,7 +50,12 @@ export default function Sidebar() {
                             <a href="mailto:kaur.ahana02@gmail.com" className="p-2 bg-surface/50 rounded-full hover:bg-surface hover:text-white transition-colors">
                                 <Mail size={18} />
                             </a>
-                            {/* Add more socials here if needed */}
+                            <a href="https://github.com/AnnaNutzz" target="_blank" rel="noopener noreferrer" className="p-2 bg-surface/50 rounded-full hover:bg-surface hover:text-white transition-colors">
+                                <Github size={18} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/ahana-kaur-560408295/" target="_blank" rel="noopener noreferrer" className="p-2 bg-surface/50 rounded-full hover:bg-surface hover:text-white transition-colors">
+                                <Linkedin size={18} />
+                            </a>
                         </div>
                     </div>
 

@@ -10,6 +10,7 @@ import Skills from "@/components/Skills";
 import Stats from "@/components/Stats";
 import Snippets from "@/components/Snippets";
 import Experiments from "@/components/Experiments";
+import MLChallenge from "@/components/MLChallenge";
 import Guestbook from "@/components/Guestbook";
 import ProjectCard from "@/components/ProjectCard";
 import BlogCard from "@/components/BlogCard";
@@ -57,6 +58,9 @@ export default function Home() {
 
                 {/* Stats Section */}
                 <Stats />
+
+                {/* ML Challenge Section */}
+                <MLChallenge />
 
                 {/* Hardware Section */}
                 <Hardware />

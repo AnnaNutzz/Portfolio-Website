@@ -1,3 +1,4 @@
+import { Github, Linkedin } from "lucide-react";
 import TypingText from "./TypingText";
 
 export default function Hero() {
@@ -26,12 +27,18 @@ export default function Hero() {
                     </ul>
                 </div>
 
-                <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex flex-wrap items-center gap-4 pt-4">
                     <a
                         href="mailto:kaur.ahana02@gmail.com"
                         className="bg-surface hover:bg-surface-hover text-white px-6 py-3 rounded-xl transition-all shadow-md hover:shadow-lg font-medium"
                     >
                         Let’s collaborate
+                    </a>
+                    <a href="https://github.com/AnnaNutzz" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface hover:bg-surface-hover text-gray-400 hover:text-white rounded-xl transition-all">
+                        <Github size={20} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/ahana-kaur-560408295/" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface hover:bg-surface-hover text-gray-400 hover:text-white rounded-xl transition-all">
+                        <Linkedin size={20} />
                     </a>
                 </div>
 
