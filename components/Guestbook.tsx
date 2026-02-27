@@ -1,44 +1,8 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import ScrollAnimation from "./ScrollAnimation";
-
-// Graffiti color & rotation combos for that vandalized wall look
-const GRAFFITI_COLORS = 6;
-const GRAFFITI_ROTATIONS = 6;
-
-// Spray paint splatter decorations
-function SpraySplatters() {
-    const splatters = useMemo(() => {
-        const colors = ["#ff2d6b", "#39ff14", "#00e5ff", "#ffea00", "#e040fb", "#ff6e40"];
-        return Array.from({ length: 8 }, (_, i) => ({
-            color: colors[i % colors.length],
-            width: 40 + (i * 17) % 80,
-            height: 30 + (i * 23) % 60,
-            top: `${10 + (i * 31) % 70}%`,
-            left: `${5 + (i * 37) % 85}%`,
-        }));
-    }, []);
-
-    return (
-        <>
-            {splatters.map((s, i) => (
-                <div
-                    key={i}
-                    className="graffiti-splatter"
-                    style={{
-                        background: s.color,
-                        width: s.width,
-                        height: s.height,
-                        top: s.top,
-                        left: s.left,
-                    }}
-                />
-            ))}
-        </>
-    );
-}
 
 export default function Guestbook() {
     const [messages, setMessages] = useState<any[]>([]);
@@ -75,94 +39,69 @@ export default function Guestbook() {
     };
 
     return (
-        <section className="py-20">
+        <section className="py-20 bg-surface/30">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* The Wall */}
-                <div className="graffiti-wall p-6 sm:p-10">
-                    {/* Spray paint splatters */}
-                    <SpraySplatters />
+                <ScrollAnimation>
+                    <h2 className="text-3xl font-bold mb-12 flex items-center gap-4 text-white">
+                        <span className="w-8 h-1 bg-gray-600 rounded-full"></span>
+                        Sign the Wall
+                    </h2>
+                </ScrollAnimation>
 
-                    {/* Title - sprayed on the wall */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <ScrollAnimation>
-                        <h2 className="graffiti-title text-4xl sm:text-5xl font-bold mb-10 inline-block">
-                            Sign the Wall
-                        </h2>
+                        <form onSubmit={handleSubmit} className="space-y-4 bg-surface p-6 rounded-xl border border-border">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    className="w-full bg-background border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:border-white transition-colors"
+                                    placeholder="Your name"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                                <textarea
+                                    id="message"
+                                    value={newMessage}
+                                    onChange={(e) => setNewMessage(e.target.value)}
+                                    className="w-full bg-background border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:border-white transition-colors h-32 resize-none"
+                                    placeholder="Leave a message..."
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className="w-full bg-white text-black font-bold py-2 rounded-md hover:bg-gray-200 transition-colors disabled:opacity-50"
+                            >
+                                {loading ? "Signing..." : "Sign"}
+                            </button>
+                        </form>
                     </ScrollAnimation>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                        {/* Form - spray your tag */}
-                        <ScrollAnimation>
-                            <form onSubmit={handleSubmit} className="graffiti-form p-6 space-y-4">
-                                <div>
-                                    <label htmlFor="name" className="block mb-1">
-                                        your tag
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        className="w-full px-4 py-2"
-                                        placeholder="spray your name..."
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="message" className="block mb-1">
-                                        leave your mark
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        value={newMessage}
-                                        onChange={(e) => setNewMessage(e.target.value)}
-                                        className="w-full px-4 py-2 h-32 resize-none"
-                                        placeholder="scribble something..."
-                                        required
-                                    />
-                                </div>
-                                <button
-                                    type="submit"
-                                    disabled={loading}
-                                    className="graffiti-btn w-full py-3 rounded-md text-lg disabled:opacity-50"
-                                >
-                                    {loading ? "Spraying..." : "🎨 Spray It"}
-                                </button>
-                            </form>
-                        </ScrollAnimation>
-
-                        {/* Messages - scribbles on the wall */}
-                        <div className="graffiti-scroll max-h-[500px] overflow-y-auto pr-2 space-y-3">
-                            {messages.length === 0 ? (
-                                <p className="graffiti-empty p-4">
-                                    🧱 This wall is clean... be the first to tag it!
-                                </p>
-                            ) : (
-                                messages.map((msg, index) => {
-                                    const colorClass = `graffiti-color-${(index % GRAFFITI_COLORS) + 1}`;
-                                    const rotClass = `graffiti-rot-${(index % GRAFFITI_ROTATIONS) + 1}`;
-
-                                    return (
-                                        <ScrollAnimation key={msg.id}>
-                                            <div className={`graffiti-msg ${colorClass} ${rotClass}`}>
-                                                {/* The scribbled message */}
-                                                <p className="graffiti-text mb-2">
-                                                    &ldquo;{msg.text}&rdquo;
-                                                </p>
-                                                {/* Signature & date */}
-                                                <div className="flex justify-between items-end gap-2">
-                                                    <span className="graffiti-name text-sm">
-                                                        — {msg.name}
-                                                    </span>
-                                                    <span className="graffiti-date">
-                                                        {msg.createdAt?.toDate().toLocaleDateString()}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </ScrollAnimation>
-                                    );
-                                })
-                            )}
-                        </div>
+                    <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                        {messages.length === 0 ? (
+                            <p className="text-gray-500 italic">Be the first to sign the wall!</p>
+                        ) : (
+                            messages.map((msg) => (
+                                <ScrollAnimation key={msg.id}>
+                                    <div className="bg-surface p-4 rounded-lg border border-border">
+                                        <p className="text-gray-300 mb-2">{msg.text}</p>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="font-bold text-white">{msg.name}</span>
+                                            <span className="text-gray-500">
+                                                {msg.createdAt?.toDate().toLocaleDateString()}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </ScrollAnimation>
+                            ))
+                        )}
                     </div>
                 </div>
             </div>
