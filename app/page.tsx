@@ -6,7 +6,7 @@ import Hero from "@/components/Hero";
 import CurrentFocus from "@/components/CurrentFocus";
 import Hardware from "@/components/Hardware";
 import Timeline from "@/components/Timeline";
-import CoGrad from "@/components/CoGrad";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Stats from "@/components/Stats";
 import Snippets from "@/components/Snippets";
@@ -36,8 +36,8 @@ export default function Home() {
                 {/* Timeline Section */}
                 <Timeline />
 
-                {/* CoGrad Section */}
-                <CoGrad />
+                {/* Experience Section */}
+                <Experience />
 
                 {/* Skills Section */}
                 <Skills />
