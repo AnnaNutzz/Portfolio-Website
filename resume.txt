@@ -1,0 +1,64 @@
+Ahana Kaur
+9679550477 | kaur.ahana02@gmail.com | LinkedIn | GitHub | Portfolio Website
+Professional Summary
+Python developer and ML engineer specializing in computer vision, geospatial AI, and deployable inference systems. Built end-to-end pipelines spanning satellite imagery analysis, semantic segmentation, NLP, and offline AI applications – from prototype through deployment. Comfortable operating across the full stack: data pipelines, model training, REST APIs, and real-world constraints. Fast learner who ships.
+Education
+Bennett UniversityGreater Noida, India
+Master of Computer Applications (MCA) – Currently 4th SemesterAug 2024 - June 2026
+Relevant Coursework: Statistical Machine Learning, Deep Learning, NLP, Soft Computing, Image & Video Processing
+Presidency UniversityBangalore, India
+Bachelor of Computer Applications (BCA)October 2021 - May 2024
+Relevant Coursework: Machine Learning, Data Structures & Algorithms, Programming in Python/C
+Experience
+CoGrad (in partnership with IIT Delhi – IHFC)India, On-site
+AI Trainer InternMar 2026 - May 2026
+Delivered AI/ML training on the KVS-IHFC STEM Teacher Training Programme – a national upskilling initiative for Kendriya Vidyalaya teachers, in partnership with IIT Delhi’s IHFC.
+Led end-to-end delivery of 4 training cohorts, covering AI/ML concepts, prompt engineering, and deployment tools (NotebookLM, Gamma, Prezi, agentic IDEs); handled on-ground technical troubleshooting across all sessions.
+Coordinated participant groups, tracked attendance, and authored cohort completion reports across multiple venue deployments across India.
+GJ Map Solutions Pvt. Ltd.Remote
+Python Developer Intern – Geospatial AI & Computer VisionFeb 2026 - Apr 2026
+Analyzed Sentinel-2 satellite imagery for land-use/land-cover (LULC) classification; processed high-resolution aerial and drone imagery for geospatial mapping workflows.
+Built and trained CV models for road detection, tree segmentation, and ship detection in coastal imagery using YOLO (object detection) and U-Net (semantic segmentation).
+Developed ML classification pipelines for terrain recognition from aerial imagery; handled dataset preprocessing, annotation, and feature extraction end-to-end.
+Executed spatial analysis and visualization in ArcGIS and QGIS, including 360° imagery processing and mobile image geotagging workflows.
+Scripted geospatial ML tooling in Python (Rasterio, Shapely, PyProj, OpenCV, PyTorch) – from requirement analysis through prototype delivery.
+Tata Group (via Forage)Remote
+Data Analytics Job SimulationDec 2025
+Applied GenAI-assisted EDA to assess data quality and surface customer risk indicators across a large dataset.
+Designed a no-code predictive delinquency risk framework and AI-driven collections strategy, incorporating ethical AI and regulatory compliance considerations.
+Technical Skills
+Core Languages: Python, SQL (MySQL, SQLite)
+Machine Learning & AI: Scikit-learn, TensorFlow, Keras, PyTorch, Hugging Face Transformers, NLP (NLTK, spaCy), Whisper, Pyannote, LLM Inference, Prompt Engineering
+Computer Vision: OpenCV, CNNs, Object Detection (YOLO), Segmentation (U-Net), Real-Time Video Processing, MediaPipe, Image Augmentation
+Geospatial & Remote Sensing: Rasterio, Shapely, PyProj, ArcGIS, QGIS, Sentinel-2 Processing, LULC Classification, OSM Road Extraction, Drone Image Analysis
+Data & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Feature Engineering, Statistical Analysis
+Web & APIs: Flask, FastAPI, REST API Development, Firebase, Kivy, Tkinter
+MLOps & Tools: Git & GitHub, Docker, Jenkins, Linux, Google Colab, VS Code, Jupyter Notebook
+Soft Skills: Systems thinking, structured problem-solving, self-directed learning, technical communication, adaptability
+
+Selected Projects
+NoiseFloor – Intelligent Job Discovery System | Python, NLP, SQLite, Twilio, Flask, Render | [Deployed]
+Architected and shipped a full-stack ML system reducing irrelevant job listings by 70–80% using semantic resume-JD matching and legitimacy scoring.
+Built rule-based risk detection for job scams and suspicious postings – providing explainable signals, not binary filters.
+Deployed to Render with event-driven webhooks and scheduled scraping for 24/7 autonomous operation; real-time WhatsApp alerts via Twilio with human-in-the-loop feedback capture.
+Persistent SQLite deduplication eliminated repeated daily alerts and prioritized newly posted roles.
+Offline AI Meeting Transcription & Summarization System | Whisper, Pyannote, Transformers, PyTorch | [In Progress]
+Built multilingual ASR pipeline achieving 90%+ transcription accuracy; reduced inference latency 35% via chunking, silence removal, and denoising.
+Integrated Pyannote speaker diarization for up to 6 speakers; generated abstractive summaries condensing 30–60 min meetings into 5–7 key insights. Runs fully offline, zero cloud cost.
+End-to-End MLOps Pipeline for ML API Deployment | Jenkins, Docker, FastAPI, Scikit-learn
+Designed CI/CD pipelines in Jenkins automating model testing, validation, and deployment; Dockerized inference APIs with 100% reproducible builds.
+Deployed FastAPI prediction services handling concurrent real-time requests with structured JSON responses.
+Real-Time Emotion Recognition System | TensorFlow, OpenCV, CNNs
+Trained CNN classifiers achieving ∼70% validation accuracy across 7 emotion classes; real-time webcam inference at 15–20 FPS on consumer hardware.
+Logged emotion predictions at 5-second intervals for temporal behavior analysis and pattern tracking.
+AI Tutor / Educational Assistant | BART, Hugging Face, Flask, SQLite
+Document ingestion pipelines (PDF/PPT/image) with BART-based abstractive summarization reducing content length by 60–70%; auto-generated personalized quizzes.
+Neural Machine Translation (English-Hindi) | MarianMT, Hugging Face, PyTorch
+Transformer encoder-decoder translation with fluent sentence-level output and interactive source/output visualization interface.
+Certifications
+Generative AI: Introduction and Applications – IBM
+Programming for Everybody (Python) – University of Michigan
+Computer Networking – Google
+
+Areas of Interest
+Computer Vision systems, Geospatial AI & Remote Sensing, Real-time ML inference, Python automation, Multimodal AI, Responsible AI & evaluation, Edge / offline deployment, AI for accessibility

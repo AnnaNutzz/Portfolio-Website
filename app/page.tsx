@@ -19,6 +19,7 @@ import Footer from "@/components/Footer";
 import Changelog from "@/components/Changelog";
 import PageTransition from "@/components/PageTransition";
 import CoGrad from "@/components/CoGrad";
+import FloatingNav from "@/components/FloatingNav";
 
 export default function Home() {
     const [projects] = useState<any[]>(localProjects);
@@ -27,21 +28,22 @@ export default function Home() {
 
     return (
         <PageTransition>
+            <FloatingNav />
             <div className="space-y-16 pb-20">
                 {/* Hero Section */}
-                <Hero />
+                <div id="hero" className="scroll-mt-24"><Hero /></div>
 
                 {/* Current Focus Section */}
-                <CurrentFocus />
+                <div id="focus" className="scroll-mt-24"><CurrentFocus /></div>
 
                 {/* Timeline Section */}
-                <Timeline />
+                <div id="timeline" className="scroll-mt-24"><Timeline /></div>
 
                 {/* Experience Section */}
                 <Experience />
 
                 {/* Skills Section */}
-                <Skills />
+                <div id="skills" className="scroll-mt-24"><Skills /></div>
 
                 {/* CoGrad Section */}
                 <CoGrad />
@@ -65,19 +67,19 @@ export default function Home() {
                 </section>
 
                 {/* Stats Section */}
-                <Stats />
+                <div id="stats" className="scroll-mt-24"><Stats /></div>
 
                 {/* ML Challenge Section */}
                 <MLChallenge />
 
                 {/* Hardware Section */}
-                <Hardware />
+                <div id="hardware" className="scroll-mt-24"><Hardware /></div>
 
                 {/* Snippets Section */}
                 <Snippets />
 
                 {/* Experiments Section */}
-                <Experiments />
+                <div id="experiments" className="scroll-mt-24"><Experiments /></div>
 
                 {/* Blogs Section */}
                 <section id="blogs" className="scroll-mt-24">
