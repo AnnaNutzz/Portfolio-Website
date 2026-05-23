@@ -89,25 +89,31 @@ export default function CoGrad() {
                         <ScrollAnimation className="bg-surface border border-gray-800 rounded-2xl p-6">
                             <h3 className="font-bold text-white text-xl mb-4 flex items-center gap-2">
                                 <BookOpen size={20} className="text-gray-400" />
-                                Standard STEM Curriculum
+                                Training Overview
                             </h3>
-                            <ul className="space-y-3 text-sm text-gray-400">
-                                <li><strong className="text-gray-300">Day 1:</strong> AI intro, prompt engineering, bulk certificates (MS Word + Excel), Canva, AI agents.</li>
-                                <li><strong className="text-gray-300">Day 2:</strong> Subject-specific tools (Gamma, NotebookLM, Kahoot!, Blooket, OBS, Prezi, Wispr, iVCam, Iriumcam).</li>
-                                <li><strong className="text-gray-300">Day 3:</strong> Arduino hands-on, 3D printing & Tinkercad.</li>
-                                <li><strong className="text-gray-300">Day 4:</strong> Industry/Lab visit.</li>
-                                <li><strong className="text-gray-300">Day 5:</strong> Peer-reviewed group presentations.</li>
-                            </ul>
+                            <div className="space-y-4 text-sm text-gray-400 leading-relaxed">
+                                <p>
+                                    Delivered comprehensive 5-day training modules to STEM educators, focusing on practical AI integration in the classroom.
+                                </p>
+                                <ul className="list-disc list-inside space-y-2 ml-1">
+                                    <li><strong className="text-gray-300">Generative AI:</strong> Prompt engineering, AI agents, and productivity automation.</li>
+                                    <li><strong className="text-gray-300">Interactive Tools:</strong> Subject-specific educational tools and digital content creation.</li>
+                                    <li><strong className="text-gray-300">Physical Computing:</strong> Hands-on Arduino, 3D printing, and CAD modeling.</li>
+                                </ul>
+                            </div>
 
                             <div className="mt-6 pt-6 border-t border-gray-800">
                                 <h4 className="font-bold text-white mb-3 flex items-center gap-2">
                                     <Award size={18} className="text-purple-400" />
-                                    Extended ML (PGT CS)
+                                    Extended ML Track
                                 </h4>
-                                <ul className="space-y-2 text-sm text-gray-400">
-                                    <li><strong className="text-gray-300">Theory:</strong> Regression, MSE, Gradient Descent, K-means, Euclidean, KNN, Apriori, Neural Networks.</li>
-                                    <li><strong className="text-gray-300">Tools:</strong> Windsurf, Cursor, Antigravity.</li>
-                                    <li><strong className="text-gray-300">Project:</strong> Full web app with ML model (.pkl in Colab → deployed via Vercel/Render + Google AI Studio).</li>
+                                <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                                    Designed an advanced curriculum for PGT Computer Science educators focusing on Applied Machine Learning.
+                                </p>
+                                <ul className="list-disc list-inside space-y-2 text-sm text-gray-400 ml-1">
+                                    <li>Foundational ML algorithms and neural networks.</li>
+                                    <li>Modern AI coding assistants and full-stack deployment.</li>
+                                    <li>End-to-end web app creation with integrated ML models.</li>
                                 </ul>
                             </div>
                         </ScrollAnimation>
