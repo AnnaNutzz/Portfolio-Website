@@ -20,7 +20,7 @@ export default function CoGrad() {
             subject: "PGT CS (Extended ML)",
             location: "MNIT Jaipur",
             role: "Assistant Trainer",
-            icon: <MapPin size={20} className="text-purple-400" />
+            icon: <Users size={20} className="text-purple-400" />
         },
         {
             week: "Week 3",
@@ -36,7 +36,7 @@ export default function CoGrad() {
             subject: "PGT Chem",
             location: "Karunya University (Mumbai/Goa)",
             role: "Lead Trainer",
-            icon: <Users size={20} className="text-orange-400" />
+            icon: <MapPin size={20} className="text-orange-400" />
         },
         {
             week: "Week 5",
