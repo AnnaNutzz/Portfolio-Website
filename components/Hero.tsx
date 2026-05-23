@@ -7,23 +7,43 @@ export default function Hero() {
             <div className="space-y-6 max-w-3xl">
                 <div className="space-y-2">
                     <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                        <TypingText text="Hi, I am Ahana Kaur" />
+                        <TypingText text="Hi, I'm Ahana Kaur" />
                     </h1>
+
                     <p className="text-xl text-gray-300">
-                        An aspiring AI/ML Developer & Creative Coder.
+                        AI/ML Developer • Computer Vision Builder • Creative Technologist
                     </p>
                 </div>
 
                 <p className="text-lg text-gray-400 leading-relaxed">
-                    I build compact, usable ML systems and creative apps — from real-time vision prototypes to automation tools that actually help me get things done.
+                    I build practical AI systems, creative tools, and experimental products —
+                    from real-time computer vision applications to geospatial deep learning
+                    and educational AI platforms.
                 </p>
 
                 <div className="space-y-2 text-gray-300">
-                    <p>Postgraduate AI/ML student at Bennett University (current CGPA 7.75). Focused on real-time computer vision (capstone), generative/assistive products, and independent ML systems engineering.</p>
+                    <p>
+                        MCA student specializing in AI/ML at Bennett University
+                        (CGPA 7.78, upward academic trend). My work focuses on
+                        computer vision, applied machine learning, geospatial AI,
+                        and product-oriented engineering.
+                    </p>
+
                     <ul className="list-disc list-inside text-gray-400 space-y-1 ml-2">
-                        <li><strong>Capstone & coursework:</strong> delivered a real-time vision capstone and a full AI Tutor product in university subjects.</li>
-                        <li><strong>Independent engineering:</strong> build, train and productionize ML systems on my own.</li>
-                        <li><strong>Product-first maker:</strong> many small apps and Kivy/Tkinter projects that solve everyday problems.</li>
+                        <li>
+                            Built real-time vision systems, AI Tutor platforms,
+                            assistive ML tools, and multiple independent desktop applications.
+                        </li>
+
+                        <li>
+                            Worked on U-Net semantic segmentation for solar farm detection
+                            using Sentinel-2 satellite imagery.
+                        </li>
+
+                        <li>
+                            Trained and mentored Kendriya Vidyalaya STEM teachers
+                            during a nationwide AI-focused CoGrad internship program.
+                        </li>
                     </ul>
                 </div>
 
@@ -32,19 +52,39 @@ export default function Hero() {
                         href="mailto:kaur.ahana02@gmail.com"
                         className="bg-surface hover:bg-surface-hover text-white px-6 py-3 rounded-xl transition-all shadow-md hover:shadow-lg font-medium"
                     >
-                        Let’s collaborate
+                        Let&apos;s collaborate
                     </a>
-                    <a href="https://github.com/AnnaNutzz" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface hover:bg-surface-hover text-gray-400 hover:text-white rounded-xl transition-all">
+
+                    <a
+                        href="https://github.com/AnnaNutzz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="p-3 bg-surface hover:bg-surface-hover text-gray-400 hover:text-white rounded-xl transition-all"
+                    >
                         <Github size={20} />
                     </a>
-                    <a href="https://www.linkedin.com/in/ahana-kaur-560408295/" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface hover:bg-surface-hover text-gray-400 hover:text-white rounded-xl transition-all">
+
+                    <a
+                        href="https://www.linkedin.com/in/ahana-kaur-560408295/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="p-3 bg-surface hover:bg-surface-hover text-gray-400 hover:text-white rounded-xl transition-all"
+                    >
                         <Linkedin size={20} />
                     </a>
                 </div>
 
                 <div className="text-gray-400 text-base pt-6 border-t border-white/10 text-justify">
                     <p>
-                        I’m an AI/ML practitioner-in-training who prefers building working systems over theoretical-only work. At Bennett University I’ve completed a real-time vision capstone (specialization project) and an AI Tutor product as part of course work, while independently designing and shipping ML systems and numerous Kivy/Tkinter apps. I enjoy turning small ideas into practical tools — and when I’m not coding I write ideas, play video games, draw and listen to music.
+                        I enjoy building systems that sit between technology,
+                        usability, and creativity. Beyond academics, I work on
+                        independent ML projects, automation tools, desktop apps,
+                        and experimental interfaces using Python, Flask, OpenCV,
+                        TensorFlow, PyTorch, Kivy, and geospatial data workflows.
+                        Outside tech, I enjoy sketching ideas, gaming, music,
+                        and exploring creative design concepts.
                     </p>
                 </div>
             </div>
