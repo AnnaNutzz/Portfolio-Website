@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Home, Folder, BookOpen, FileText, Settings, Menu, X, Github, Mail, Linkedin } from "lucide-react";
+import { Home, Folder, BookOpen, FileText, Settings, Menu, X, Github, Mail, Linkedin, Briefcase } from "lucide-react";
 import SpriteAnimation from "./SpriteAnimation";
 
 const navItems = [
     { name: "Home", href: "/", icon: Home },
+    { name: "Experience", href: "/#experience", icon: Briefcase },
     { name: "Projects", href: "/#projects", icon: Folder },
     { name: "Blogs", href: "/#blogs", icon: BookOpen },
     { name: "Resume", href: "/resume", icon: FileText },

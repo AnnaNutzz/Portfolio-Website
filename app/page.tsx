@@ -18,6 +18,7 @@ import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import Changelog from "@/components/Changelog";
 import PageTransition from "@/components/PageTransition";
+import CoGrad from "@/components/CoGrad";
 
 export default function Home() {
     const [projects] = useState<any[]>(localProjects);
@@ -41,6 +42,9 @@ export default function Home() {
 
                 {/* Skills Section */}
                 <Skills />
+
+                {/* CoGrad Section */}
+                <CoGrad />
 
                 {/* Projects Section */}
                 <section id="projects" className="scroll-mt-24">
