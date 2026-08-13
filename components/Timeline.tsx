@@ -59,68 +59,78 @@ export default function Timeline() {
         <section className="py-10">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation>
-                    <h2 className="text-3xl font-bold mb-12 flex items-center gap-4 text-white">
-                        <span className="w-8 h-1 bg-gray-600 rounded-full"></span>
-                        My Journey
-                    </h2>
+                    <h2 className="p5-section-heading mb-12">My Journey</h2>
                 </ScrollAnimation>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12">
                     {/* Left Side Logos (Desktop) */}
                     <div className="hidden lg:flex flex-col justify-start items-end gap-32 pt-20">
                         <div className="relative">
-                            <SpriteAnimation
-                                src="/bennett_logo.png"
-                                sheetWidth={960}
-                                sheetHeight={1280}
-                                cols={3}
-                                rows={4}
-                                totalFrames={11}
-                                fps={7}
-                                displaySize={150}
-                                className="opacity-90 hover:opacity-100 transition-opacity rounded-2xl"
-                            />
-                            <p className="text-center text-xs text-gray-500 mt-2">Bennett University</p>
+                            <div className="border-2 border-p5-red rounded-2xl overflow-hidden p-1">
+                                <SpriteAnimation
+                                    src="/bennett_logo.png"
+                                    sheetWidth={960}
+                                    sheetHeight={1280}
+                                    cols={3}
+                                    rows={4}
+                                    totalFrames={11}
+                                    fps={7}
+                                    displaySize={150}
+                                    className="opacity-90 hover:opacity-100 transition-opacity rounded-xl"
+                                />
+                            </div>
+                            <p className="text-center text-xs text-p5-gray mt-2 font-heading tracking-wider">BENNETT UNIVERSITY</p>
                         </div>
                         <div className="relative mt-20">
-                            <SpriteAnimation
-                                src="/presi_logo.png"
-                                sheetWidth={960}
-                                sheetHeight={960}
-                                cols={3}
-                                rows={3}
-                                totalFrames={8}
-                                fps={3}
-                                displaySize={150}
-                                className="opacity-90 hover:opacity-100 transition-opacity rounded-2xl"
-                            />
-                            <p className="text-center text-xs text-gray-500 mt-2">Presidency University</p>
+                            <div className="border-2 border-p5-red rounded-2xl overflow-hidden p-1">
+                                <SpriteAnimation
+                                    src="/presi_logo.png"
+                                    sheetWidth={960}
+                                    sheetHeight={960}
+                                    cols={3}
+                                    rows={3}
+                                    totalFrames={8}
+                                    fps={3}
+                                    displaySize={150}
+                                    className="opacity-90 hover:opacity-100 transition-opacity rounded-xl"
+                                />
+                            </div>
+                            <p className="text-center text-xs text-p5-gray mt-2 font-heading tracking-wider">PRESIDENCY UNIVERSITY</p>
                         </div>
                     </div>
 
-                    {/* Timeline Line (Desktop) */}
-                    <div className="hidden lg:block w-px bg-gray-700 relative"></div>
+                    {/* Timeline Line (Desktop) — Bold red */}
+                    <div className="hidden lg:block w-[2px] bg-p5-red/50 relative">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-p5-red rotate-45" />
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-p5-red rotate-45" />
+                    </div>
 
                     {/* Timeline Content */}
-                    <div className="relative border-l border-gray-700 ml-3 md:ml-0 lg:border-none space-y-12 lg:space-y-16">
+                    <div className="relative border-l-2 border-p5-red/30 ml-3 md:ml-0 lg:border-none space-y-12 lg:space-y-16">
                         {events.map((event, index) => (
                             <ScrollAnimation key={index} className="mb-10 ml-8 lg:ml-0 relative">
-                                {/* Mobile Dot */}
-                                <span className={`lg:hidden absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-background ${event.current ? 'bg-white' : 'bg-gray-700'}`}></span>
+                                {/* Mobile Dot — Red */}
+                                <span className={`lg:hidden absolute -left-[41px] flex h-6 w-6 items-center justify-center ring-4 ring-background ${event.current ? 'bg-p5-red rotate-45 animate-p5-glow' : 'bg-p5-gray-dark rotate-45'}`}></span>
 
                                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
-                                    <span className={`text-sm font-medium px-2.5 py-0.5 rounded w-fit ${event.current ? 'bg-white text-black' : 'bg-gray-800 text-gray-300'}`}>
+                                    <span
+                                        className={`text-sm font-heading tracking-wider px-3 py-1 w-fit uppercase ${event.current
+                                            ? 'bg-p5-red text-white animate-p5-glow'
+                                            : 'bg-p5-gray-dark text-gray-300'
+                                            }`}
+                                        style={{ clipPath: 'polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)' }}
+                                    >
                                         {event.year}
                                     </span>
                                     <h3 className="text-xl font-bold text-white">{event.title}</h3>
                                 </div>
-                                <p className="text-gray-400 max-w-xl">
+                                <p className="text-p5-gray max-w-xl">
                                     {event.desc}
                                 </p>
 
                                 {/* Mobile Logos */}
                                 {event.logo === "bennett" && (
-                                    <div className="lg:hidden mt-4">
+                                    <div className="lg:hidden mt-4 border-2 border-p5-red rounded-xl overflow-hidden w-fit p-1">
                                         <SpriteAnimation
                                             src="/bennett_logo.png"
                                             sheetWidth={960}
@@ -130,12 +140,12 @@ export default function Timeline() {
                                             totalFrames={11}
                                             fps={7}
                                             displaySize={120}
-                                            className="rounded-2xl"
+                                            className="rounded-lg"
                                         />
                                     </div>
                                 )}
                                 {event.logo === "presi" && (
-                                    <div className="lg:hidden mt-4">
+                                    <div className="lg:hidden mt-4 border-2 border-p5-red rounded-xl overflow-hidden w-fit p-1">
                                         <SpriteAnimation
                                             src="/presi_logo.png"
                                             sheetWidth={960}
@@ -145,7 +155,7 @@ export default function Timeline() {
                                             totalFrames={8}
                                             fps={3}
                                             displaySize={120}
-                                            className="rounded-2xl"
+                                            className="rounded-lg"
                                         />
                                     </div>
                                 )}

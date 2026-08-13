@@ -22,7 +22,7 @@ export default function TypingText({ text, className = "" }: TypingTextProps) {
                 setIsTyping(false);
                 clearInterval(intervalId);
             }
-        }, 100); // Adjust typing speed here (ms per character)
+        }, 70); // Faster typing — P5's snappy feel
 
         return () => clearInterval(intervalId);
     }, [text]);
@@ -33,11 +33,11 @@ export default function TypingText({ text, className = "" }: TypingTextProps) {
             <motion.span
                 animate={{ opacity: [1, 0] }}
                 transition={{
-                    duration: 0.8,
+                    duration: 0.5,
                     repeat: Infinity,
                     repeatType: "reverse",
                 }}
-                className="inline-block w-[4px] h-[1em] bg-current ml-1 align-middle"
+                className="inline-block w-[4px] h-[0.85em] bg-p5-red ml-1 align-middle"
             />
         </span>
     );

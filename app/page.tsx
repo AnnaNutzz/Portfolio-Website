@@ -20,6 +20,7 @@ import Changelog from "@/components/Changelog";
 import PageTransition from "@/components/PageTransition";
 import CoGrad from "@/components/CoGrad";
 import FloatingNav from "@/components/FloatingNav";
+import P5SectionDivider from "@/components/P5SectionDivider";
 
 export default function Home() {
     const [projects] = useState<any[]>(localProjects);
@@ -29,34 +30,43 @@ export default function Home() {
     return (
         <PageTransition>
             <FloatingNav />
-            <div className="space-y-16 pb-20">
+            <div className="space-y-4 pb-20">
                 {/* Hero Section */}
                 <div id="hero" className="scroll-mt-24"><Hero /></div>
+
+                <P5SectionDivider variant="slash" />
 
                 {/* Current Focus Section */}
                 <div id="focus" className="scroll-mt-24"><CurrentFocus /></div>
 
+                <P5SectionDivider variant="line" />
+
                 {/* Timeline Section */}
                 <div id="timeline" className="scroll-mt-24"><Timeline /></div>
+
+                <P5SectionDivider variant="burst" />
 
                 {/* Experience Section */}
                 <Experience />
 
+                <P5SectionDivider variant="slash" />
+
                 {/* Skills Section */}
                 <div id="skills" className="scroll-mt-24"><Skills /></div>
+
+                <P5SectionDivider variant="line" />
 
                 {/* CoGrad Section */}
                 <CoGrad />
 
+                <P5SectionDivider variant="burst" />
+
                 {/* Projects Section */}
                 <section id="projects" className="scroll-mt-24">
-                    <div className="flex items-center gap-4 mb-8">
-                        <h2 className="text-3xl font-bold text-white">Selected Projects</h2>
-                        <div className="h-px bg-gray-700 flex-1"></div>
-                    </div>
+                    <h2 className="p5-section-heading mb-8">Selected Projects</h2>
 
                     {loading ? (
-                        <div className="text-center text-gray-500">Loading projects...</div>
+                        <div className="text-center text-p5-gray font-heading tracking-wider">LOADING PROJECTS...</div>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {projects.map((project) => (
@@ -66,30 +76,39 @@ export default function Home() {
                     )}
                 </section>
 
+                <P5SectionDivider variant="slash" />
+
                 {/* Stats Section */}
                 <div id="stats" className="scroll-mt-24"><Stats /></div>
+
+                <P5SectionDivider variant="line" />
 
                 {/* ML Challenge Section */}
                 <MLChallenge />
 
+                <P5SectionDivider variant="burst" />
+
                 {/* Hardware Section */}
                 <div id="hardware" className="scroll-mt-24"><Hardware /></div>
+
+                <P5SectionDivider variant="slash" />
 
                 {/* Snippets Section */}
                 <Snippets />
 
+                <P5SectionDivider variant="line" />
+
                 {/* Experiments Section */}
                 <div id="experiments" className="scroll-mt-24"><Experiments /></div>
 
+                <P5SectionDivider variant="burst" />
+
                 {/* Blogs Section */}
                 <section id="blogs" className="scroll-mt-24">
-                    <div className="flex items-center gap-4 mb-8">
-                        <h2 className="text-3xl font-bold text-white">Latest Thoughts</h2>
-                        <div className="h-px bg-gray-700 flex-1"></div>
-                    </div>
+                    <h2 className="p5-section-heading mb-8">Latest Thoughts</h2>
 
                     {loading ? (
-                        <div className="text-center text-gray-500">Loading blogs...</div>
+                        <div className="text-center text-p5-gray font-heading tracking-wider">LOADING BLOGS...</div>
                     ) : (
                         <div className="space-y-8">
                             {blogs.map((blog) => (
@@ -99,8 +118,12 @@ export default function Home() {
                     )}
                 </section>
 
+                <P5SectionDivider variant="slash" />
+
                 {/* Guestbook Section */}
                 <Guestbook />
+
+                <P5SectionDivider variant="line" />
 
                 {/* Changelog Section */}
                 <Changelog />

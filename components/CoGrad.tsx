@@ -12,7 +12,7 @@ export default function CoGrad() {
             subject: "TGT Maths",
             location: "SRM Sonepat",
             role: "Lead Trainer",
-            icon: <MapPin size={20} className="text-blue-400" />
+            icon: <MapPin size={20} className="text-p5-red" />
         },
         {
             week: "Week 2",
@@ -20,7 +20,7 @@ export default function CoGrad() {
             subject: "PGT CS (Extended ML)",
             location: "MNIT Jaipur",
             role: "Assistant Trainer",
-            icon: <Users size={20} className="text-purple-400" />
+            icon: <Users size={20} className="text-p5-yellow" />
         },
         {
             week: "Week 3",
@@ -28,7 +28,7 @@ export default function CoGrad() {
             subject: "PGT Chem",
             location: "Karunya University (Andhra/Hyderabad)",
             role: "Lead Trainer",
-            icon: <MapPin size={20} className="text-green-400" />
+            icon: <MapPin size={20} className="text-p5-red" />
         },
         {
             week: "Week 4",
@@ -36,7 +36,7 @@ export default function CoGrad() {
             subject: "PGT Chem",
             location: "Karunya University (Mumbai/Goa)",
             role: "Lead Trainer",
-            icon: <MapPin size={20} className="text-orange-400" />
+            icon: <MapPin size={20} className="text-p5-red" />
         },
         {
             week: "Week 5",
@@ -44,7 +44,7 @@ export default function CoGrad() {
             subject: "PGT CS (Extended ML)",
             location: "Karunya University (Bangalore/Chennai/Port Blair)",
             role: "Lead Trainer",
-            icon: <MapPin size={20} className="text-purple-400" />
+            icon: <MapPin size={20} className="text-p5-red" />
         }
     ];
 
@@ -52,11 +52,8 @@ export default function CoGrad() {
         <section className="py-10 scroll-mt-24" id="cograd">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation>
-                    <h2 className="text-3xl font-bold mb-8 flex items-center gap-4 text-white">
-                        <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
-                        National AI Training Program (CoGrad)
-                    </h2>
-                    <p className="text-gray-400 mb-12 max-w-3xl text-lg">
+                    <h2 className="p5-section-heading mb-8">National AI Training Program (CoGrad)</h2>
+                    <p className="text-p5-gray mb-12 max-w-3xl text-lg">
                         Lead AI Trainer for a nationwide initiative empowering Kendriya Vidyalaya (KV) STEM teachers.
                         Traveled across India to train batches of 20-67 teachers over 5 weeks on generative AI,
                         machine learning, and physical computing.
@@ -66,9 +63,7 @@ export default function CoGrad() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Left side: Sprite & Curriculum */}
                     <div className="lg:col-span-1 space-y-8">
-                        <ScrollAnimation className="bg-surface border border-gray-800 rounded-2xl p-6">
-                            {/* Note: User specified 4rows 1 col, but 1920x480 usually means 4 cols 1 row for 480x480 square frames. 
-                                We set cols=4 rows=1. If it renders wrong, it can be adjusted. */}
+                        <ScrollAnimation className="p5-card rounded-none p-6">
                             <SpriteAnimation
                                 src="/cograd_logo.png"
                                 sheetWidth={1920}
@@ -80,40 +75,54 @@ export default function CoGrad() {
                                 displaySize={200}
                                 className="opacity-90 hover:opacity-100 transition-opacity mx-auto"
                             />
-                            <div className="text-center mt-6">
-                                <h3 className="font-bold text-white text-lg">CoGrad & IHFC</h3>
-                                <p className="text-gray-400 text-sm mt-1">Mar 30 - May 9, 2026</p>
+                            <div className="text-center mt-6 relative z-10">
+                                <h3 className="font-heading tracking-wider text-white text-lg">COGRAD & IHFC</h3>
+                                <p className="text-p5-gray text-sm mt-1 font-heading tracking-wider">MAR 30 - MAY 9, 2026</p>
                             </div>
                         </ScrollAnimation>
 
-                        <ScrollAnimation className="bg-surface border border-gray-800 rounded-2xl p-6">
-                            <h3 className="font-bold text-white text-xl mb-4 flex items-center gap-2">
-                                <BookOpen size={20} className="text-gray-400" />
-                                Training Overview
+                        <ScrollAnimation className="p5-card rounded-none p-6 p5-left-accent">
+                            <h3 className="font-heading tracking-wider text-white text-xl mb-4 flex items-center gap-2 relative z-10">
+                                <BookOpen size={20} className="text-p5-red" />
+                                TRAINING OVERVIEW
                             </h3>
-                            <div className="space-y-4 text-sm text-gray-400 leading-relaxed">
+                            <div className="space-y-4 text-sm text-p5-gray leading-relaxed relative z-10">
                                 <p>
                                     Delivered comprehensive 5-day training modules to STEM educators, focusing on practical AI integration in the classroom.
                                 </p>
-                                <ul className="list-disc list-inside space-y-2 ml-1">
-                                    <li><strong className="text-gray-300">Generative AI:</strong> Prompt engineering, AI agents, and productivity automation.</li>
-                                    <li><strong className="text-gray-300">Interactive Tools:</strong> Subject-specific educational tools and digital content creation.</li>
-                                    <li><strong className="text-gray-300">Physical Computing:</strong> Hands-on Arduino, 3D printing, and CAD modeling.</li>
+                                <ul className="space-y-2 ml-1">
+                                    {[
+                                        { b: "Generative AI:", t: "Prompt engineering, AI agents, and productivity automation." },
+                                        { b: "Interactive Tools:", t: "Subject-specific educational tools and digital content creation." },
+                                        { b: "Physical Computing:", t: "Hands-on Arduino, 3D printing, and CAD modeling." },
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2">
+                                            <span className="text-p5-red text-xs mt-1.5">▸</span>
+                                            <span><strong className="text-white">{item.b}</strong> {item.t}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
-                            <div className="mt-6 pt-6 border-t border-gray-800">
-                                <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                                    <Award size={18} className="text-purple-400" />
-                                    Extended ML Track
+                            <div className="mt-6 pt-6 border-t border-p5-gray-dark relative z-10">
+                                <h4 className="font-heading tracking-wider text-white mb-3 flex items-center gap-2 uppercase">
+                                    <Award size={18} className="text-p5-yellow" />
+                                    EXTENDED ML TRACK
                                 </h4>
-                                <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                                <p className="text-sm text-p5-gray leading-relaxed mb-3">
                                     Designed an advanced curriculum for PGT Computer Science educators focusing on Applied Machine Learning.
                                 </p>
-                                <ul className="list-disc list-inside space-y-2 text-sm text-gray-400 ml-1">
-                                    <li>Foundational ML algorithms and neural networks.</li>
-                                    <li>Modern AI coding assistants and full-stack deployment.</li>
-                                    <li>End-to-end web app creation with integrated ML models.</li>
+                                <ul className="space-y-2 text-sm text-p5-gray ml-1">
+                                    {[
+                                        "Foundational ML algorithms and neural networks.",
+                                        "Modern AI coding assistants and full-stack deployment.",
+                                        "End-to-end web app creation with integrated ML models.",
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2">
+                                            <span className="text-p5-red text-xs mt-1.5">▸</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </ScrollAnimation>
@@ -121,26 +130,31 @@ export default function CoGrad() {
 
                     {/* Right side: Timeline */}
                     <div className="lg:col-span-2 relative">
-                        <div className="absolute left-[27px] top-4 bottom-4 w-px bg-gray-800 hidden sm:block"></div>
+                        <div className="absolute left-[27px] top-4 bottom-4 w-[2px] bg-p5-red/30 hidden sm:block"></div>
                         <div className="space-y-8">
                             {weeks.map((week, index) => (
                                 <ScrollAnimation key={index} className="relative sm:pl-16">
-                                    <div className="hidden sm:flex absolute left-0 top-2 w-14 h-14 bg-surface border border-gray-700 rounded-full items-center justify-center z-10 shadow-lg">
+                                    <div className="hidden sm:flex absolute left-0 top-2 w-14 h-14 bg-p5-surface border-2 border-p5-red items-center justify-center z-10 shadow-[0_0_10px_rgba(255,0,0,0.2)]">
                                         {week.icon}
                                     </div>
-                                    <div className="bg-surface border border-gray-800 rounded-2xl p-6 hover:border-gray-600 transition-colors">
-                                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                                    <div className="p5-card rounded-none p-6 hover:border-p5-red transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4 relative z-10">
                                             <div>
-                                                <h3 className="text-xl font-bold text-white mb-1">{week.week} — {week.location}</h3>
-                                                <p className="text-blue-400 font-medium">{week.subject}</p>
+                                                <h3 className="text-xl font-heading tracking-wider text-white mb-1">{week.week} — {week.location}</h3>
+                                                <p className="text-p5-red font-heading tracking-wider">{week.subject}</p>
                                             </div>
                                             <div className="flex flex-col sm:items-end gap-2">
-                                                <span className="text-sm text-gray-400 flex items-center gap-1.5">
-                                                    <Calendar size={14} />
+                                                <span className="text-sm text-p5-gray flex items-center gap-1.5 font-heading tracking-wider">
+                                                    <Calendar size={14} className="text-p5-red" />
                                                     {week.date}
                                                 </span>
-                                                <span className={`text-xs px-2.5 py-1 rounded-full font-medium w-fit ${week.role === "Lead Trainer" ? "bg-blue-500/10 text-blue-400 border border-blue-500/20" : "bg-orange-500/10 text-orange-400 border border-orange-500/20"}`}>
-                                                    {week.role}
+                                                <span className={`text-xs px-2.5 py-1 font-heading tracking-wider w-fit ${
+                                                    week.role === "Lead Trainer"
+                                                        ? "bg-p5-red/10 text-p5-red border border-p5-red/30"
+                                                        : "bg-p5-yellow/10 text-p5-yellow border border-p5-yellow/30"
+                                                }`}
+                                                    style={{ clipPath: 'polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)' }}>
+                                                    {week.role.toUpperCase()}
                                                 </span>
                                             </div>
                                         </div>

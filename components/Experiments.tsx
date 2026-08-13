@@ -32,51 +32,48 @@ export default function Experiments() {
         <section className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation>
-                    <h2 className="text-3xl font-bold mb-12 flex items-center gap-4 text-white">
-                        <span className="w-8 h-1 bg-orange-600 rounded-full"></span>
-                        AI Experiments
-                    </h2>
+                    <h2 className="p5-section-heading mb-12">AI Experiments</h2>
                 </ScrollAnimation>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {experiments.map((exp) => (
                         <ScrollAnimation key={exp.id}>
-                            <div className="bg-surface border border-border rounded-xl p-6 hover:border-orange-500/50 transition-colors group">
-                                <div className="flex items-start justify-between mb-4">
-                                    <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                            <div className="p5-card rounded-none p-6 hover:border-p5-red transition-colors group p5-corner-accents">
+                                <div className="flex items-start justify-between mb-4 relative z-10">
+                                    <h3 className="text-xl font-heading tracking-wider text-white group-hover:text-p5-red transition-colors uppercase">
                                         {exp.title}
                                     </h3>
-                                    <Beaker className="w-6 h-6 text-orange-500" />
+                                    <Beaker className="w-6 h-6 text-p5-red" />
                                 </div>
 
-                                <div className="text-gray-400 mb-6 italic prose prose-invert max-w-none text-sm">
+                                <div className="text-p5-gray mb-6 italic prose prose-invert max-w-none text-sm relative z-10">
                                     <ReactMarkdown>{exp.problem}</ReactMarkdown>
                                 </div>
 
-                                <div className="space-y-4 text-sm">
+                                <div className="space-y-4 text-sm relative z-10">
                                     <div className="flex items-center gap-3">
-                                        <Brain className="w-4 h-4 text-purple-400" />
+                                        <Brain className="w-4 h-4 text-p5-red" />
                                         <span className="text-gray-300">Model: {exp.model}</span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <Database className="w-4 h-4 text-blue-400" />
+                                        <Database className="w-4 h-4 text-p5-red" />
                                         <span className="text-gray-300">Dataset: {exp.dataset}</span>
                                     </div>
                                 </div>
 
-                                <div className="mt-6 p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Result</h4>
+                                <div className="mt-6 p-4 bg-p5-black/80 border border-p5-red/20 relative z-10">
+                                    <h4 className="text-xs font-heading tracking-[0.2em] text-p5-red mb-2 uppercase">Result</h4>
                                     <div className="text-gray-300 prose prose-invert max-w-none text-sm">
                                         <ReactMarkdown>{exp.result}</ReactMarkdown>
                                     </div>
                                 </div>
 
                                 {exp.failures && (
-                                    <div className="mt-4 flex gap-3 items-start">
-                                        <AlertTriangle className="w-4 h-4 text-red-400 mt-1 shrink-0" />
+                                    <div className="mt-4 flex gap-3 items-start relative z-10">
+                                        <AlertTriangle className="w-4 h-4 text-p5-red mt-1 shrink-0" />
                                         <div className="w-full">
-                                            <span className="text-red-400 font-bold text-xs uppercase block mb-1">Failures: </span>
-                                            <div className="text-gray-400 text-sm prose prose-invert max-w-none">
+                                            <span className="text-p5-red font-heading tracking-wider text-xs uppercase block mb-1">FAILURES: </span>
+                                            <div className="text-p5-gray text-sm prose prose-invert max-w-none">
                                                 <ReactMarkdown>{exp.failures}</ReactMarkdown>
                                             </div>
                                         </div>
@@ -84,7 +81,7 @@ export default function Experiments() {
                                 )}
 
                                 {exp.next && (
-                                    <div className="mt-4 pt-4 border-t border-gray-800 flex items-center gap-2 text-sm text-green-400">
+                                    <div className="mt-4 pt-4 border-t border-p5-gray-dark flex items-center gap-2 text-sm text-p5-yellow relative z-10">
                                         <ArrowRight className="w-4 h-4 shrink-0" />
                                         <div className="prose prose-invert max-w-none">
                                             <ReactMarkdown>{`Next: ${exp.next}`}</ReactMarkdown>

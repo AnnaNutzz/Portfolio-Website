@@ -44,23 +44,21 @@ export default function Snippets() {
         <section className="py-20" id="snippets">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation>
-                    <h2 className="text-3xl font-bold mb-12 flex items-center gap-4 text-white">
-                        <span className="w-8 h-1 bg-gray-600 rounded-full"></span>
-                        Knowledge Base
-                    </h2>
+                    <h2 className="p5-section-heading mb-12">Knowledge Base</h2>
                 </ScrollAnimation>
 
-                {/* Category Filter */}
+                {/* Category Filter — P5 angular pills */}
                 <ScrollAnimation>
                     <div className="flex flex-wrap gap-2 mb-12">
                         {categories.map((cat) => (
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveCategory(cat.id)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2
+                                className={`px-4 py-2 text-sm font-heading tracking-wider transition-all flex items-center gap-2 uppercase
                                     ${activeCategory === cat.id
-                                        ? "bg-white text-black"
-                                        : "bg-surface text-gray-400 hover:text-white hover:bg-gray-800"}`}
+                                        ? "bg-p5-red text-white"
+                                        : "bg-p5-surface text-p5-gray hover:text-white hover:border-p5-red border border-p5-gray-dark"}`}
+                                style={activeCategory === cat.id ? { clipPath: 'polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)' } : undefined}
                             >
                                 {cat.icon && <cat.icon className="w-4 h-4" />}
                                 {cat.label}
@@ -72,18 +70,18 @@ export default function Snippets() {
                 {/* Snippets Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {loading ? (
-                        <div className="col-span-full text-center text-gray-500">Loading chaos...</div>
+                        <div className="col-span-full text-center text-p5-gray font-heading tracking-wider uppercase">Loading chaos...</div>
                     ) : filteredSnippets.length > 0 ? (
                         filteredSnippets.map((snippet) => (
                             <ScrollAnimation key={snippet.id}>
                                 <Link href={`/snippets/${snippet.id}`} className="block h-full">
-                                    <div className="bg-surface p-6 rounded-xl border border-border h-full hover:border-gray-600 transition-colors group cursor-pointer">
-                                        <div className="flex items-start justify-between mb-4">
-                                            <div className={`p-2 rounded-lg bg-opacity-10 
-                                                ${snippet.category === 'graveyard' ? 'bg-red-500 text-red-500' :
-                                                    snippet.category === 'betrayal' ? 'bg-orange-500 text-orange-500' :
-                                                        snippet.category === 'learning' ? 'bg-blue-500 text-blue-500' :
-                                                            'bg-gray-500 text-gray-500'}`}>
+                                    <div className="p5-card rounded-none p-6 h-full hover:border-p5-red transition-colors group cursor-pointer">
+                                        <div className="flex items-start justify-between mb-4 relative z-10">
+                                            <div className={`p-2 ${
+                                                snippet.category === 'graveyard' ? 'bg-p5-red/20 text-p5-red' :
+                                                    snippet.category === 'betrayal' ? 'bg-p5-yellow/20 text-p5-yellow' :
+                                                        snippet.category === 'learning' ? 'bg-p5-red/10 text-p5-red' :
+                                                            'bg-p5-gray-dark/50 text-p5-gray'}`}>
                                                 {categories.find(c => c.id === snippet.category)?.icon ?
                                                     (() => {
                                                         const Icon = categories.find(c => c.id === snippet.category)?.icon!;
@@ -91,23 +89,23 @@ export default function Snippets() {
                                                     })() : <Terminal className="w-5 h-5" />
                                                 }
                                             </div>
-                                            <span className="text-xs text-gray-600 font-mono">
+                                            <span className="text-xs text-p5-gray font-mono">
                                                 {snippet.createdAt?.toDate ? snippet.createdAt.toDate().toLocaleDateString() : 'Just now'}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gray-200 transition-colors">
+                                        <h3 className="text-lg font-heading tracking-wider text-white mb-2 group-hover:text-p5-red transition-colors uppercase relative z-10">
                                             {snippet.title}
                                         </h3>
 
-                                        <p className="text-gray-400 text-sm mb-4 line-clamp-4">
+                                        <p className="text-p5-gray text-sm mb-4 line-clamp-4 relative z-10">
                                             {snippet.content}
                                         </p>
 
                                         {snippet.tags && (
-                                            <div className="flex flex-wrap gap-2 mt-auto">
+                                            <div className="flex flex-wrap gap-2 mt-auto relative z-10">
                                                 {snippet.tags.map((tag: string, i: number) => (
-                                                    <span key={i} className="text-xs text-gray-500 bg-black/20 px-2 py-1 rounded">
+                                                    <span key={i} className="text-xs text-p5-red/70 bg-p5-red/5 px-2 py-1 border border-p5-red/10">
                                                         #{tag}
                                                     </span>
                                                 ))}
@@ -116,11 +114,11 @@ export default function Snippets() {
 
                                         {/* Specific fields for different types */}
                                         {snippet.painLevel && (
-                                            <div className="mt-4 flex items-center gap-2 text-xs text-red-400">
-                                                <span>Pain Level:</span>
+                                            <div className="mt-4 flex items-center gap-2 text-xs text-p5-red relative z-10">
+                                                <span className="font-heading tracking-wider">PAIN LEVEL:</span>
                                                 <div className="flex gap-0.5">
                                                     {Array.from({ length: 5 }).map((_, i) => (
-                                                        <div key={i} className={`w-1.5 h-1.5 rounded-full ${i < (snippet.painLevel / 2) ? 'bg-red-500' : 'bg-gray-800'}`}></div>
+                                                        <div key={i} className={`w-2 h-2 ${i < (snippet.painLevel / 2) ? 'bg-p5-red' : 'bg-p5-gray-dark'}`}></div>
                                                     ))}
                                                 </div>
                                             </div>
@@ -131,8 +129,8 @@ export default function Snippets() {
                         ))
                     ) : (
                         <div className="col-span-full text-center py-20">
-                            <p className="text-gray-500">No thoughts found in this category.</p>
-                            <p className="text-gray-700 text-sm mt-2">Head empty, no thoughts.</p>
+                            <p className="text-p5-gray font-heading tracking-wider uppercase">No thoughts found in this category.</p>
+                            <p className="text-p5-gray/50 text-sm mt-2 italic">Head empty, no thoughts.</p>
                         </div>
                     )}
                 </div>

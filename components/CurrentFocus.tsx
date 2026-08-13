@@ -31,12 +31,12 @@ export default function CurrentFocus() {
 
     const getStatusIcon = (status: string) => {
         switch (status) {
-            case "idea": return <Sparkles className="w-5 h-5 text-yellow-400" />;
-            case "prototype": return <Hammer className="w-5 h-5 text-blue-400" />;
-            case "debugging": return <Bug className="w-5 h-5 text-red-400" />;
-            case "polishing": return <Sparkles className="w-5 h-5 text-purple-400" />;
+            case "idea": return <Sparkles className="w-5 h-5 text-p5-yellow" />;
+            case "prototype": return <Hammer className="w-5 h-5 text-p5-red" />;
+            case "debugging": return <Bug className="w-5 h-5 text-red-500" />;
+            case "polishing": return <Sparkles className="w-5 h-5 text-p5-yellow" />;
             case "almost_done": return <Rocket className="w-5 h-5 text-green-400" />;
-            default: return <Hammer className="w-5 h-5 text-gray-400" />;
+            default: return <Hammer className="w-5 h-5 text-p5-gray" />;
         }
     };
 
@@ -55,38 +55,50 @@ export default function CurrentFocus() {
         <section className="py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation>
-                    <div className="bg-surface border border-border rounded-xl p-6 md:p-8 relative overflow-hidden">
-                        {/* Background Pulse */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="p5-card rounded-none p-6 md:p-8 p5-corner-accents">
+                        {/* Diagonal red stripe accent */}
+                        <div className="absolute top-0 left-0 w-32 h-32 overflow-hidden pointer-events-none">
+                            <div className="absolute top-0 left-0 w-40 h-[3px] bg-p5-red transform -rotate-45 translate-y-8 -translate-x-4" />
+                        </div>
 
                         <div className="relative z-10">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                                 <div>
-                                    <h2 className="text-sm font-bold text-purple-400 uppercase tracking-wider mb-2">
-                                        What I'm Building Right Now
+                                    <h2 className="text-sm font-heading tracking-[0.2em] text-p5-red mb-2 uppercase">
+                                        ▸ CURRENT MISSION
                                     </h2>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                                    <h3 className="text-2xl md:text-3xl font-heading tracking-wider text-white mb-2">
                                         {focus.project}
                                     </h3>
-                                    <div className="flex items-center gap-2 text-gray-400">
+                                    <div className="flex items-center gap-2 text-p5-gray">
                                         {getStatusIcon(focus.status)}
-                                        <span>{getStatusText(focus.status)}</span>
+                                        <span className="font-heading tracking-wider uppercase">{getStatusText(focus.status)}</span>
                                     </div>
                                 </div>
 
                                 <div className="flex-1 max-w-md">
                                     <div className="flex justify-between text-sm mb-2">
-                                        <span className="text-gray-400">Progress</span>
-                                        <span className="text-white font-mono">{focus.progress}%</span>
+                                        <span className="text-p5-gray font-heading tracking-wider uppercase">Progress</span>
+                                        <span className="text-white font-mono text-p5-red font-bold">{focus.progress}%</span>
                                     </div>
-                                    <div className="h-3 bg-gray-800 rounded-full overflow-hidden">
+                                    {/* P5 HP bar style */}
+                                    <div className="h-4 bg-p5-gray-dark overflow-hidden relative"
+                                        style={{ clipPath: 'polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%)' }}>
                                         <div
-                                            className="h-full bg-gradient-to-r from-purple-600 to-pink-600 transition-all duration-1000 ease-out"
+                                            className="h-full bg-gradient-to-r from-p5-red to-p5-yellow transition-all duration-1000 ease-out relative"
                                             style={{ width: `${focus.progress}%` }}
-                                        ></div>
+                                        >
+                                            {/* Animated stripes */}
+                                            <div className="absolute inset-0 animate-p5-stripe"
+                                                style={{
+                                                    backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 15px)',
+                                                    backgroundSize: '30px 100%',
+                                                }}
+                                            />
+                                        </div>
                                     </div>
                                     {focus.eta && (
-                                        <p className="text-xs text-gray-500 mt-2 text-right italic">
+                                        <p className="text-xs text-p5-gray mt-2 text-right font-heading tracking-wider">
                                             ETA: {focus.eta}
                                         </p>
                                     )}

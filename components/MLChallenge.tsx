@@ -5,33 +5,9 @@ import { ChevronDown, CheckCircle2, Circle, Loader2, ExternalLink } from "lucide
 import ScrollAnimation from "./ScrollAnimation";
 
 const statusIcon = {
-    done: <CheckCircle2 className="w-4 h-4 text-emerald-400" />,
-    "in-progress": <Loader2 className="w-4 h-4 text-yellow-400 animate-spin" />,
-    planned: <Circle className="w-4 h-4 text-gray-600" />,
-};
-
-const phaseColors: Record<string, string> = {
-    emerald: "border-emerald-500/30 hover:border-emerald-500/60",
-    blue: "border-blue-500/30 hover:border-blue-500/60",
-    purple: "border-purple-500/30 hover:border-purple-500/60",
-    amber: "border-amber-500/30 hover:border-amber-500/60",
-    rose: "border-rose-500/30 hover:border-rose-500/60",
-};
-
-const phaseAccents: Record<string, string> = {
-    emerald: "text-emerald-400",
-    blue: "text-blue-400",
-    purple: "text-purple-400",
-    amber: "text-amber-400",
-    rose: "text-rose-400",
-};
-
-const phaseBg: Record<string, string> = {
-    emerald: "bg-emerald-500/10",
-    blue: "bg-blue-500/10",
-    purple: "bg-purple-500/10",
-    amber: "bg-amber-500/10",
-    rose: "bg-rose-500/10",
+    done: <CheckCircle2 className="w-4 h-4 text-p5-red" />,
+    "in-progress": <Loader2 className="w-4 h-4 text-p5-yellow animate-spin" />,
+    planned: <Circle className="w-4 h-4 text-p5-gray-dark" />,
 };
 
 export default function MLChallenge() {
@@ -45,31 +21,37 @@ export default function MLChallenge() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollAnimation>
                     <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-3xl font-bold flex items-center gap-4 text-white">
-                            <span className="w-8 h-1 bg-violet-600 rounded-full"></span>
-                            50 Days × 50 AI Projects
-                        </h2>
+                        <h2 className="p5-section-heading">50 Days × 50 AI Projects</h2>
                         <a
                             href="https://github.com/AnnaNutzz/50-Days-50-ML-AI-Projects"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+                            className="flex items-center gap-2 text-sm text-p5-gray hover:text-p5-red transition-colors font-heading tracking-wider uppercase"
                         >
-                            View Repo <ExternalLink className="w-4 h-4" />
+                            VIEW REPO <ExternalLink className="w-4 h-4" />
                         </a>
                     </div>
 
-                    {/* Progress bar */}
+                    {/* P5 Progress bar — Mementos style */}
                     <div className="mb-10">
-                        <div className="flex justify-between text-sm text-gray-400 mb-2">
-                            <span>{doneCount}/50 completed</span>
-                            <span>{progress}%</span>
+                        <div className="flex justify-between text-sm text-p5-gray mb-2 font-heading tracking-wider">
+                            <span>{doneCount}/50 COMPLETED</span>
+                            <span className="text-p5-red font-bold">{progress}%</span>
                         </div>
-                        <div className="h-2 bg-surface rounded-full overflow-hidden">
+                        <div className="h-3 bg-p5-gray-dark overflow-hidden"
+                            style={{ clipPath: 'polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%)' }}>
                             <div
-                                className="h-full bg-gradient-to-r from-violet-600 to-purple-400 rounded-full transition-all duration-700"
+                                className="h-full bg-gradient-to-r from-p5-red to-p5-crimson transition-all duration-700 relative"
                                 style={{ width: `${progress}%` }}
-                            />
+                            >
+                                {/* Animated stripes */}
+                                <div className="absolute inset-0 animate-p5-stripe"
+                                    style={{
+                                        backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(255,255,255,0.1) 8px, rgba(255,255,255,0.1) 12px)',
+                                        backgroundSize: '30px 100%',
+                                    }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </ScrollAnimation>
@@ -83,40 +65,40 @@ export default function MLChallenge() {
 
                         return (
                             <ScrollAnimation key={phase.id}>
-                                <div className={`border rounded-xl bg-surface/50 transition-colors ${phaseColors[phase.color]}`}>
+                                <div className={`border p5-card rounded-none transition-colors ${isOpen ? 'border-p5-red' : 'border-p5-gray-dark hover:border-p5-red/50'}`}>
                                     <button
                                         onClick={() => setOpenPhase(isOpen ? null : phase.id)}
-                                        className="w-full flex items-center justify-between p-5 text-left"
+                                        className="w-full flex items-center justify-between p-5 text-left relative z-10"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <span className={`text-sm font-mono font-bold ${phaseAccents[phase.color]}`}>
+                                            <span className="text-sm font-heading tracking-wider font-bold text-p5-red bg-p5-red/10 w-10 h-10 flex items-center justify-center border border-p5-red/30">
                                                 P{phase.id}
                                             </span>
                                             <div>
-                                                <h3 className="text-lg font-bold text-white">{phase.name}</h3>
-                                                <p className="text-sm text-gray-500">{phase.range} · {phaseDone}/10 done</p>
+                                                <h3 className="text-lg font-heading tracking-wider text-white uppercase">{phase.name}</h3>
+                                                <p className="text-sm text-p5-gray font-heading tracking-wider">{phase.range} · {phaseDone}/10 DONE</p>
                                             </div>
                                         </div>
-                                        <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                                        <ChevronDown className={`w-5 h-5 text-p5-red transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                                     </button>
 
                                     {isOpen && (
-                                        <div className="border-t border-border px-5 pb-5">
+                                        <div className="border-t border-p5-gray-dark px-5 pb-5">
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
                                                 {phaseProjects.map((project) => (
                                                     <div
                                                         key={project.day}
-                                                        className={`flex items-start gap-3 p-3 rounded-lg ${phaseBg[phase.color]} border border-transparent hover:border-border transition-colors`}
+                                                        className="flex items-start gap-3 p-3 bg-p5-black/50 border border-p5-gray-dark hover:border-p5-red/30 transition-colors"
                                                     >
                                                         <div className="mt-0.5">{statusIcon[project.status]}</div>
                                                         <div className="flex-1 min-w-0">
                                                             <div className="flex items-center gap-2">
-                                                                <span className="text-xs font-mono text-gray-500">D{String(project.day).padStart(2, "0")}</span>
+                                                                <span className="text-xs font-mono text-p5-red">D{String(project.day).padStart(2, "0")}</span>
                                                                 <span className="text-sm font-medium text-white truncate">{project.title}</span>
                                                             </div>
                                                             <div className="flex flex-wrap gap-1 mt-1">
                                                                 {project.tags.map(tag => (
-                                                                    <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-gray-500">
+                                                                    <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-p5-red/5 text-p5-gray border border-p5-gray-dark/50">
                                                                         {tag}
                                                                     </span>
                                                                 ))}
