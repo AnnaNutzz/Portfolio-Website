@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, Phone, Linkedin, Github, Download, FileText } from "lucide-react";
+import P5BattleNav from "@/components/P5BattleNav";
 
 export default function Resume() {
     return (
         <div className="min-h-screen bg-background text-foreground py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-surface p-8 md:p-12 rounded-xl shadow-2xl border border-border">
+            <P5BattleNav />
+            <div className="max-w-5xl mx-auto bg-surface p-8 md:p-12 shadow-2xl border border-p5-red/20">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6 border-b border-gray-700 pb-8">
                     <div>

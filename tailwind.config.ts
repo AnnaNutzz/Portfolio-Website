@@ -23,6 +23,7 @@ const config: Config = {
                 "p5-black": "#0a0a0a",
                 "p5-gray": "#888888",
                 "p5-surface": "#1a1a1a",
+                "p5-gray-dark": "#333333",
             },
             fontFamily: {
                 heading: ['"Bebas Neue"', 'Impact', 'sans-serif'],

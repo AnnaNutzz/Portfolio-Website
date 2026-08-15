@@ -6,6 +6,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
+import P5BattleNav from "@/components/P5BattleNav";
 
 export default function BlogDetail() {
     const { id } = useParams();
@@ -40,10 +41,11 @@ export default function BlogDetail() {
 
     return (
         <PageTransition>
-            <div className="py-8 md:py-12">
+            <P5BattleNav />
+            <div className="max-w-5xl mx-auto p-4 md:p-8 lg:p-12 py-8 md:py-12">
                 <button
                     onClick={() => router.back()}
-                    className="flex items-center gap-2 text-gray-400 hover:text-primary mb-8 transition-colors group"
+                    className="flex items-center gap-2 text-p5-gray hover:text-p5-red mb-8 transition-colors group font-heading tracking-wider"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
                     Back to Thoughts
@@ -51,8 +53,8 @@ export default function BlogDetail() {
 
                 {/* Header */}
                 <div className="mb-8">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white leading-tight">{blog.title}</h1>
-                    <div className="flex items-center gap-6 text-gray-400 text-sm">
+                    <h1 className="text-4xl md:text-5xl font-heading tracking-wider mb-4 text-white leading-tight uppercase">{blog.title}</h1>
+                    <div className="flex items-center gap-6 text-p5-gray text-sm font-heading tracking-wider">
                         <div className="flex items-center gap-2">
                             <Calendar size={16} />
                             <span>{new Date(blog.date).toLocaleDateString()}</span>
@@ -65,7 +67,7 @@ export default function BlogDetail() {
                 </div>
 
                 {/* Media Section */}
-                <div className="relative w-full h-[300px] md:h-[500px] bg-black/20 rounded-2xl overflow-hidden mb-12 border border-white/5 shadow-lg">
+                <div className="relative w-full h-[300px] md:h-[500px] bg-black/20 overflow-hidden mb-12 border border-p5-red/30 shadow-lg">
                     {blog.videoUrl ? (
                         <video
                             src={blog.videoUrl}

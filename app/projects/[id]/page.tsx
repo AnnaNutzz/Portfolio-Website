@@ -8,6 +8,7 @@ import rehypeRaw from "rehype-raw";
 
 import { Github, ArrowLeft, ExternalLink } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
+import P5BattleNav from "@/components/P5BattleNav";
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -42,21 +43,23 @@ export default function ProjectDetail() {
 
     return (
         <PageTransition>
-            <div className="py-8 md:py-12">
+            <P5BattleNav />
+            <div className="max-w-5xl mx-auto p-4 md:p-8 lg:p-12 py-8 md:py-12">
                 <button
                     onClick={() => router.back()}
-                    className="flex items-center gap-2 text-gray-400 hover:text-primary mb-8 transition-colors group"
+                    className="flex items-center gap-2 text-p5-gray hover:text-p5-red mb-8 transition-colors group font-heading tracking-wider"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
                     Back to Projects
                 </button>
 
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">{project.title}</h1>
+                <h1 className="text-4xl md:text-5xl font-heading tracking-wider mb-6 text-white uppercase">{project.title}</h1>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
                     {project.tags?.map((tag: string) => (
-                        <span key={tag} className="px-3 py-1 bg-surface border border-white/5 text-gray-300 text-sm rounded-xl">
+                        <span key={tag} className="px-3 py-1 bg-p5-red/10 border border-p5-red/20 text-p5-red text-sm font-heading tracking-wider"
+                            style={{ clipPath: 'polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%)' }}>
                             #{tag}
                         </span>
                     ))}
@@ -126,7 +129,8 @@ export default function ProjectDetail() {
                             href={project.demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                            className="flex items-center gap-2 bg-p5-red hover:bg-red-700 text-white font-heading tracking-wider py-3 px-6 transition-all shadow-md hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] hover:-translate-y-0.5"
+                            style={{ clipPath: 'polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%)' }}
                         >
                             <ExternalLink size={20} />
                             View Live Demo
@@ -137,7 +141,7 @@ export default function ProjectDetail() {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-surface hover:bg-surface-hover text-white font-medium py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                            className="flex items-center gap-2 bg-p5-surface hover:bg-surface-hover text-white font-heading tracking-wider py-3 px-6 border border-p5-red/30 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                         >
                             <Github size={20} />
                             View Code

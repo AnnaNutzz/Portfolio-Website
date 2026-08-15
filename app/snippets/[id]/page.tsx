@@ -5,6 +5,7 @@ import { db } from "@/lib/firebase";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Brain, Bug, Lightbulb, AlertTriangle, Terminal } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import P5BattleNav from "@/components/P5BattleNav";
 
 export default function SnippetDetail() {
     const { id } = useParams();
@@ -63,11 +64,12 @@ export default function SnippetDetail() {
     const CategoryIcon = categories.find(c => c.id === snippet.category)?.icon || Terminal;
 
     return (
-        <div className="min-h-screen bg-background text-white py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
+        <div className="min-h-screen bg-background text-white">
+            <P5BattleNav />
+            <div className="max-w-3xl mx-auto p-4 md:p-8 lg:p-12 py-20">
                 <button
                     onClick={() => router.back()}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
+                    className="flex items-center gap-2 text-p5-gray hover:text-p5-red mb-8 transition-colors font-heading tracking-wider"
                 >
                     <ArrowLeft size={20} />
                     Back to Knowledge Base
@@ -76,14 +78,14 @@ export default function SnippetDetail() {
                 {/* Header */}
                 <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                        <div className={`p-3 rounded-xl bg-opacity-10 
-                            ${snippet.category === 'graveyard' ? 'bg-red-500 text-red-500' :
-                                snippet.category === 'betrayal' ? 'bg-orange-500 text-orange-500' :
-                                    snippet.category === 'learning' ? 'bg-blue-500 text-blue-500' :
-                                        'bg-gray-500 text-gray-500'}`}>
+                        <div className={`p-3 
+                            ${snippet.category === 'graveyard' ? 'bg-p5-red/20 text-p5-red' :
+                                snippet.category === 'betrayal' ? 'bg-p5-yellow/20 text-p5-yellow' :
+                                    snippet.category === 'learning' ? 'bg-p5-red/10 text-p5-red' :
+                                        'bg-p5-gray-dark/50 text-p5-gray'}`}>
                             <CategoryIcon className="w-6 h-6" />
                         </div>
-                        <h1 className="text-3xl font-bold">{snippet.title}</h1>
+                        <h1 className="text-3xl font-heading tracking-wider uppercase">{snippet.title}</h1>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-gray-400">
                         <span>{snippet.createdAt?.toDate ? snippet.createdAt.toDate().toLocaleDateString() : 'Just now'}</span>
@@ -107,9 +109,9 @@ export default function SnippetDetail() {
 
                 {/* Tags */}
                 {snippet.tags && (
-                    <div className="flex flex-wrap gap-2 pt-8 border-t border-gray-800">
+                    <div className="flex flex-wrap gap-2 pt-8 border-t border-p5-red/20">
                         {snippet.tags.map((tag: string, i: number) => (
-                            <span key={i} className="text-sm text-gray-400 bg-gray-900 px-3 py-1 rounded-full border border-gray-800">
+                            <span key={i} className="text-sm text-p5-red bg-p5-red/5 px-3 py-1 border border-p5-red/10 font-heading tracking-wider">
                                 #{tag}
                             </span>
                         ))}

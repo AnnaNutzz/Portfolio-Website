@@ -11,7 +11,7 @@ const sections = [
     { id: "cograd", label: "CoGrad" },
     { id: "projects", label: "Projects" },
     { id: "stats", label: "Stats" },
-    { id: "ml", label: "MLChallenge" },
+    { id: "ml-challenge", label: "MLChallenge" },
     { id: "hardware", label: "Hardware" },
     { id: "snippets", label: "Snippets" },
     { id: "experiments", label: "Experiments" },

@@ -45,6 +45,14 @@ export default function CoGrad() {
             location: "Karunya University (Bangalore/Chennai/Port Blair)",
             role: "Lead Trainer",
             icon: <MapPin size={20} className="text-p5-red" />
+        },
+        {
+            week: "Week 6",
+            date: "13 July - 17 July 2026",
+            subject: "PGT Physics & CS",
+            location: "IIT Delhi - Sonepat",
+            role: "Lead Trainer",
+            icon: <MapPin size={20} className="text-p5-red" />
         }
     ];
 
@@ -148,11 +156,10 @@ export default function CoGrad() {
                                                     <Calendar size={14} className="text-p5-red" />
                                                     {week.date}
                                                 </span>
-                                                <span className={`text-xs px-2.5 py-1 font-heading tracking-wider w-fit ${
-                                                    week.role === "Lead Trainer"
+                                                <span className={`text-xs px-2.5 py-1 font-heading tracking-wider w-fit ${week.role === "Lead Trainer"
                                                         ? "bg-p5-red/10 text-p5-red border border-p5-red/30"
                                                         : "bg-p5-yellow/10 text-p5-yellow border border-p5-yellow/30"
-                                                }`}
+                                                    }`}
                                                     style={{ clipPath: 'polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)' }}>
                                                     {week.role.toUpperCase()}
                                                 </span>
