@@ -63,7 +63,7 @@ export default function CoGrad() {
                     <h2 className="p5-section-heading mb-8">National AI Training Program (CoGrad)</h2>
                     <p className="text-p5-gray mb-12 max-w-3xl text-lg">
                         Lead AI Trainer for a nationwide initiative empowering Kendriya Vidyalaya (KV) STEM teachers.
-                        Traveled across India to train batches of 20-67 teachers over 5 weeks on generative AI,
+                        Traveled across India to train batches of 20-67 teachers over 6 weeks on generative AI,
                         machine learning, and physical computing.
                     </p>
                 </ScrollAnimation>
@@ -85,7 +85,7 @@ export default function CoGrad() {
                             />
                             <div className="text-center mt-6 relative z-10">
                                 <h3 className="font-heading tracking-wider text-white text-lg">COGRAD & IHFC</h3>
-                                <p className="text-p5-gray text-sm mt-1 font-heading tracking-wider">MAR 30 - MAY 9, 2026</p>
+                                <p className="text-p5-gray text-sm mt-1 font-heading tracking-wider">MAR 30 - MAY 9, 2026 +</p>
                             </div>
                         </ScrollAnimation>
 
@@ -157,8 +157,8 @@ export default function CoGrad() {
                                                     {week.date}
                                                 </span>
                                                 <span className={`text-xs px-2.5 py-1 font-heading tracking-wider w-fit ${week.role === "Lead Trainer"
-                                                        ? "bg-p5-red/10 text-p5-red border border-p5-red/30"
-                                                        : "bg-p5-yellow/10 text-p5-yellow border border-p5-yellow/30"
+                                                    ? "bg-p5-red/10 text-p5-red border border-p5-red/30"
+                                                    : "bg-p5-yellow/10 text-p5-yellow border border-p5-yellow/30"
                                                     }`}
                                                     style={{ clipPath: 'polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)' }}>
                                                     {week.role.toUpperCase()}
