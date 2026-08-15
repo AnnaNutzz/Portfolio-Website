@@ -12,7 +12,7 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
                 <div className="text-center md:text-left">
-                    <p className="text-white font-heading tracking-wider uppercase">MADE BY AHANA KAUR — 2025</p>
+                    <p className="text-white font-heading tracking-wider uppercase">MADE BY AHANA KAUR — 2026</p>
                     <p className="text-p5-gray text-sm mt-1">
                         Built with Next.js, Tailwind, <span className="text-p5-red">&</span> Chaos
                     </p>
